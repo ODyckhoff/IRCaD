@@ -14,44 +14,44 @@ Entities in the Game section
 
 * Visible
   * Map
-    * Terrain {x, y, type, players, items, npcs, mobs}
+      * Terrain {x, y, type, players, items, npcs, mobs}
       * Paths {N, S, E, W}
       * Description
   * Character
-    * Name (Must not be in Names list)
-    * Type {type} (e.g. Player, NPC, Mob, Rare)
-    * Level
-    * Health
-    * Mana (Remains at 0 for non-magic classes)
-    * Species {type} (e.g. Elf, Half-Giant, Dwarf...)
-    * Class {type} (e.g. Rogue, Wizard, Warrior...)
-    * Attributes {Strength, Constitution, Dexterity, Intelligence, Wisdom, Charisma}
-    * Location {x, y}
-    * Inventory
-    * Friends
-    * Foes
-    * Buffs
-    * Item
-    * Name
-    * Type (e.g. dagger, sword, stick}
-    * Attributes
-    * Level
-    * In Possession {=false|name}
-    * Buffs
-    * Description
-    * Location {x, y}
+      * Name (Must not be in Names list)
+      * Type {type} (e.g. Player, NPC, Mob, Rare)
+      * Level
+      * Health
+      * Mana (Remains at 0 for non-magic classes)
+      * Species {type} (e.g. Elf, Half-Giant, Dwarf...)
+      * Class {type} (e.g. Rogue, Wizard, Warrior...)
+      * Attributes {Strength, Constitution, Dexterity, Intelligence, Wisdom, Charisma}
+      * Location {x, y}
+      * Inventory
+      * Friends
+      * Foes
+      * Buffs
+      * Item
+      * Name
+      * Type (e.g. dagger, sword, stick}
+      * Attributes
+      * Level
+      * In Possession {=false|name}
+      * Buffs
+      * Description
+      * Location {x, y}
 * GameEngine
   * Init
   * Database
-    * Account
-    * Username
-	  * Encrypted Password
-    * Names {->[Character]}
-	* Items
+      * Account
+	      * Username
+	      * Encrypted Password
+      * Names {->[Character]}
+	  * Items
   * Turn Manager
   * Buff Manager
   * Spawn Manager
   * Database Manager
-       * Authentication Unit
+      * Authentication Unit
   * Configuration
   * WebInterfaceModule
