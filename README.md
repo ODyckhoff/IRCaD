@@ -52,6 +52,6 @@ Entities in the Game section
   * Buff Manager
   * Spawn Manager
   * Database Manager
-    * Authentication Unit
+       * Authentication Unit
   * Configuration
   * WebInterfaceModule
