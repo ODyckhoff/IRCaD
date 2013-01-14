@@ -11,6 +11,7 @@ This is likely to be a long project, so please show patience!
 
 Entities in the Game section
 ============================
+(Please note: this list is more like a checklist of things to be done, as well as an indication of the planned underlying structure for the bot.)
 
 * Visible
   * Map
