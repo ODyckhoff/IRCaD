@@ -18,44 +18,44 @@ Entities in the Game section
       * Paths {N, S, E, W, U, D}
       * Description (Inputted by dm)
   * Mobs
-     *Player Characters
-      	* Location {x, y, z}
-      	* Type {type} always humanoid
-      	* Species {type} (e.g. Elf, Dwarf, Hoomin...)
-      	* Gender {gender}
-      	* Class {type} (e.g. Witch/Wizard, Warrior, Rogue...)
-      	* Attributes {strength, dexterity, constitution, intelligence, wisdom, charisma}
-      	* Level
-      	* Modifiers {modifiers} (double dex, +critical%...)
-      	* Health, Mana
-      	* Moves
-      	* Name
-      	* Inventory {items}
-      	* Friends, Foes
-     * NPCs
-        * Location {x, y, z}
-      	* Type {type} always humanoid
-      	* Species {type} (e.g. Elf, Dwarf, Hoomin...)
-      	* Gender {gender}
-      	* Name
-      	* NPC Type {npc, shop, quest}
-      	* Items allowed
-      	* Items (shop type buy and sell items, quest allows the creation of a dialogue screen)
-      	* Level
-      	* Modifiers
-      	* Health, Mana
-      	* Moves
-      	* Friends, Foes
-     * AngryMobs
-        * Location {x, y, z}
-        * Type {type} (e.g. humanoid, beast, flying, giantflying, giant, small)
-        * Species {type} (e.g. in small: fairy, vole, bat, rat...)
-        * Level (random, between 2 set values per species)
-        * Items alllowed {item}
-        * Modifiers {modifiers} (defence bonus, flanking...)
-        * Health, Mana
-        * Moves
-        * Friends, Foes
+	*Player Characters
+      		* Location {x, y, z}
+      		* Type {type} always humanoid
+      		* Species {type} (e.g. Elf, Dwarf, Hoomin...)
+      		* Gender {gender}
+      		* Class {type} (e.g. Witch/Wizard, Warrior, Rogue...)
+      		* Attributes {strength, dexterity, constitution, intelligence, wisdom, charisma}
+      		* Level
+      		* Modifiers {modifiers} (double dex, +critical%...)
+      		* Health, Mana
+      		* Moves
+      		* Name
+      		* Inventory {items}
+      		* Friends, Foes
+     	* NPCs
+        	* Location {x, y, z}
+      		* Type {type} always humanoid
+      		* Species {type} (e.g. Elf, Dwarf, Hoomin...)
+      		* Gender {gender}
+      		* Name
+      		* NPC Type {npc, shop, quest}
+      		* Items allowed
+      		* Items (shop type buy and sell items, quest allows the creation of a dialogue screen)
+      		* Level
+      		* Modifiers
+      		* Health, Mana
+      		* Moves
+      		* Friends, Foes
+     	* AngryMobs
+        	* Location {x, y, z}
+        	* Type {type} (e.g. humanoid, beast, flying, giantflying, giant, small)
+        	* Species {type} (e.g. in small: fairy, vole, bat, rat...)
+        	* Level (random, between 2 set values per species)
+        	* Items alllowed {item}
+        	* Modifiers {modifiers} (defence bonus, flanking...)
+        	* Health, Mana
+        	* Moves
+        	* Friends, Foes
   * Items
 	*Wearable {type}
 		*Place {type} (e.g. Head, Body, Shield...)
