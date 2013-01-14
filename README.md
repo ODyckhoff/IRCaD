@@ -21,7 +21,7 @@ Entities in the Game section
         * Player Characters
             * Location {x, y, z}
             * Type {type} always humanoid
-      	    * Species {type} (e.g. Elf, Dwarf, Hoomin...)
+      	    * Species {type} (e.g. Elf, Dwarf, Human...)
       	    * Gender {gender}
       	    * Class {type} (e.g. Witch/Wizard, Warrior, Rogue...)
       	    * Attributes {strength, dexterity, constitution, intelligence, wisdom, charisma}
