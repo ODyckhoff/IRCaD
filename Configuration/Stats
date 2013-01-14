@@ -1,0 +1,137 @@
+strength      str	1-20	    <9 hurts self with weapons 		>15 gains ability 'heavy blow' once per rest
+dexterity	    dex	1-20	    <9 clumsy				              >15 gains ability 'take aim' once per rest
+charisma	    cha	1-20	    <9 gets terrible shop deals		>15 gains ability 'silver tongued' once per rest
+wisdom		    wis	1-20	    <9 forgets things			        >15 gains ability 'loremaster' once per rest
+intelligence	int	1-20	    <9 cannot speak properly	    >15 gains ability 'telekinesis' once per rest
+constitution	con	1-20	    <9 carry limit decreased	    >15 gains ability 'rock armour' once per rest
+ 
+Points needed to increase a stat
+10-12: 1
+13-15: 2 
+16-18: 3 
+19: 4  
+20: 5
+
+
+stats start at 10
+starting points: 10
+points per level: 5
+
+        
+human 		+2 wis -2 dex +1 int -1 cha
+elf 		+2 int -2 con +1 wis -1 dex
+half elf 	+2 cha -2 wis +1 dex -1 str
+dwarf 		+2 con -2 int +1 str -1 wis
+gnome 		+2 dex -2 str +1 cha -1 con
+half giant	+2 str -2 cha +1 con -1 int
+
+Classes
+
+* Warrior 	
+    * weapon damage*str, dex roll for accuracy.
+    * DPS Class
+    * Does not regenerate mana
+    * Can use swords, daggers and shields
+    * Feats
+          * Two handed path
+            1: 75% from off hand weapon (usually 50%)
+            2: (Offhand damage/Mainhand damage)*2 = damage
+            3: Enables 'Dual hand sweep' move
+          * Sword and shield path
+            1. 25% reduction in damage from shield
+            2. 50% reduction in damage from shield
+            3. Enables 'Shield Bash' move
+          * Buff path
+            1. +2 str
+            2. +2 str, con
+            3. +2 str, con, dex
+* Rogue		
+    * weapon damage*dex. criticals reduced from 18 to 15.
+    * Utility Class
+    * Does not regenerate mana
+    * Can use daggers, swords and exotics(schimitars, machetes)
+    * Feats
+          * Assassin path
+            1. Enables 'stealth', some monsters can see you. 30% damage when stealthed.
+            2. 50% chance for a monster to see you when stealthed if it can see stealth.
+            3. Enables 'Backstab' move
+          * Locksmith path
+            1. Able to open basic locks and reveal all traps
+            2. Able to open average locks and disarm basic traps
+            3. Able to open hard locks and disarm hard traps, enables 'deft hands' move.
+          * Buff path
+            1. +2 int
+            2. +2 int, dex
+            3. +2 int, dex, strength
+* Sorcerer	
+    * spell damage*cha, wis mana pool.
+    * DPS Class
+    * Regenerates mana
+    * Can use staffs and cesti
+    * Feats
+          * Fire/Electric path
+            1. Learn tier 1 fire/electric spells
+            2. Learn tier 2 fire/electric spells
+            3. Learn tier 3 fire/electric spells, enables 'Fireball' move.
+          * Death/Curses path
+            1. Learn tier 1 death/curses spells
+            2. Learn tier 2 death/curses spells
+            3. Learn tier 3 death/curses spells, enables 'Vampirism' move
+          * Buff path
+            1. +2 cha
+            2. +2 cha, wis
+            3. +2 cha, wis, int
+* Wizard		
+    * spell damage*int, wis mana pool.
+    * Utility Class
+    * Regenerates mana
+    * Can use staffs and cesti
+    * Feats
+          * Damage path
+            1. Learn tier 1 of wizard damage spells 
+            2. Learn tier 2 of wizard damage spells
+            3. Learn tier 3 of wizard damage spells, enables 'Arcane fury' move.
+          * Utility path
+            1. Learn tier 1 of wizard utility spells
+            2. Learn tier 2 of wizard utility spells
+            3. Learn tier 3 of wizard utility spells, enables 'Minute of invulnerability' move.
+          * Buff path
+            1. +2 wis
+            2. +2 wis, int
+            3. +2 wis, int, cha
+* Protector	
+    * weapon damage*str, dex roll for accuracy.
+    * Tank Class
+    * Does not regenerate mana
+    * Can use broadswords, axes and shields
+    * Feats
+          * Damage path
+            1. Damage +20% if two handed weapon
+            2. Shields are 20% more effective
+            3. Enables 'Cleaving blow' move
+          * Aggro path
+            1. Armour is 20% more effective
+            2. Any enemy hit auto attacks you
+            3. Enables 'Fury stomp' move
+          * Buff path
+            1. +2 con
+            2. +2 con, str
+            3. +2 con, str, wis
+* Ranger		
+    * weapon damage*dex. 
+    * Utility Class
+    * Does not regenerate mana
+    * Can use shortbows, longbows and crossbows
+    * Feats
+          * Damage path
+            1. +10% damage from shortbows and crossbows
+            2. +10% range from all bows and crossbows, +30% damage from short/longbows, +20% from crossbows.
+            3. Enables 'Aimed shot' move
+          * Taming path
+            1. Allows you to make a beast neutral, to stop it attacking you.
+            2. Allows you to make a beast friendly, it will follow you and attack its own foes.
+            3. Enables 'Summon' move.
+          * Buff path
+            1. +2 dex
+            2. +2 dex, cha
+            3. +2 dex, cha, con
