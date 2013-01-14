@@ -57,22 +57,22 @@ Entities in the Game section
       * Moves
       * Friends, Foes
   * Items
-    * Wearable {type}
-      * Place {type} (e.g. Head, Body, Shield...)
-      * Rarity/Material {item} (value between 1 and 10, dictates number of enchantments)
-      * Enchantments {item} (from a table, rarity increases higher number stat boosts)
-      * Size, weight
-      * Name ((If rarity=10 use name table, otherwise "size material place enchantments") e.g. large velvet hat of dreams)
-    * Potion 
-      * Effect
-      * Size, weight
-      * Name ((size effect potion) e.g. small healing potion)
-    * Other
-      * Size, weight
-      * Name
+      * Wearable {type}
+        * Place {type} (e.g. Head, Body, Shield...)
+        * Rarity/Material {item} (value between 1 and 10, dictates number of enchantments)
+        * Enchantments {item} (from a table, rarity increases higher number stat boosts)
+        * Size, weight
+        * Name ((If rarity=10 use name table, otherwise "size material place enchantments") e.g. large velvet hat of dreams)
+      * Potion 
+        * Effect
+        * Size, weight
+        * Name ((size effect potion) e.g. small healing potion)
+      * Other
+        * Size, weight
+        * Name
 	
-  * Quests
-    * TBA
+    * Quests
+      * TBA
 
 * GameEngine
   * Init
