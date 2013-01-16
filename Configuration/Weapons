@@ -32,14 +32,14 @@ Warrior
 1 tree branch
 
 * Mace	
-10 'Doomguard's thorns'
+10 'Doomguard's thorns'; 'Ironhand's wrath'
 8 adamantine mace
 6 red crystal mace
 4 iron mace
 2 splintered mace
 
 * Shield
-10 'Ironhand's shield'
+10 'Ironhand's protector'
 9 captain's shield
 7 titanium shield
 5 iron shield
@@ -104,77 +104,51 @@ Wizard/Sorcerer
 Warden
 
 * Greatsword
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
+10 'Sword of Zarabriel'
+9 Skullkuller
+8 adamantine greatsword
+7 titanium greatsword
+6 red crystal greatsword
+5 iron greatsword
+4 rusted greatsword
+3 wooden greatsword
+2 splintered wooden greatsword
+1 rotten wooden greatsword
 
 * Axe	
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
+10 'Ironhand's smite'
+9 metallic thorn axe 
+7 adamantine axe
+5 red crystal axe
+3 iron axe
+1 hatchet
 
 * Shield
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
+10 'Ironhand's protector'
+9 captain's shield
+7 titanium shield
+5 iron shield
+3 rusty shield 
+1 wood bark shield
 	
 Ranger
 
 * Shortbow	
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
+10 'Carved creatures bow'
+9 dryad shortbow
+8 angled shortbow
+5 elm shortbow
+2 twine shortbow
 
 * Longbow		
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
+10 'Bow of the forest'
+9 elven longbow
+7 filigree longbow
+4 birch longbow
+1 crude longbow
 
 * Crossbow
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-
-
+10 'Furyfire's wrath'
+9 soldier's crossbow
+6 oak crossbow
+3 splintered crossbow
