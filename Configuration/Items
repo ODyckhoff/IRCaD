@@ -1,0 +1,73 @@
+// Am making a brief overview of the items list, giving item IDs.
+// Only weapons so far, this will allow the admins to 'give' at item to a player. 
+// '/admingive 1 playerX' would give playerX item 1, a tree branch.
+// The tree branch can be equipped by a warrior or a wizard, but the two are different IDs.
+
+Format: 
+ID | ItemCode | Name | Type | Material | Slot | ClassType | BuffCode
+
+ID is an integer that applies to one item only.
+ItemCode is a single letter, either W A or M. (weapon, armour, miscellaneous)
+Name is a text field.
+Type defines which subgroup of the ItemCode the item is in. (Longsword)
+Material defines the rarity index of the type. (1)
+Slot is where item is equipped. (Mainhand)
+ClassType is a 2 letter code which allows a class to equip the item. (Wa) 
+BuffCode determines whether an item has:
+* set buffs when it spawns (y)
+* a set number of randomly generated ones. (n0, n1, n2, n3)
+
+So when making an iron longsword:
+ID is 5, W for weapon, Iron Longsword is the name, longsword is the type, iron is the material, mainhand is the slot, 
+wa is the classtype and the buffcode is n1, as it does not have set buffs and can be randomly assigned 1 buff.
+
+1|W|Tree Branch|longsword|01|mainhand|wa|n0
+2|W|Splinted Longsword|longsword|02|mainhand|wa|n0
+3|W|Rusty Longsword|longsword|03|mainhand|wa|n0
+4|W|Battered Iron Longsword|longsword|04|mainhand|wa|n1
+5|W|Iron Longsword|longsword|05|mainhand|wa|n1
+6|W|Red Crystal Longsword|longsword|06|mainhand|wa|n1
+7|W|Titanium Longsword|longsword|07|mainhand|wa|n2
+8|W|Adamantine Longsword|longsword|08|mainhand|wa|n2
+9|W|Blackfired Longsword|longsword|09|mainhand|wa|n3
+10|W|Doomguard's Smite|longsword|10|mainhand|wa|y
+11|W|Ironhand's Fury|longsword|10|mainhand|wa|y
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
