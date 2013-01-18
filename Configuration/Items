@@ -1,7 +1,7 @@
-// Am making a brief overview of the items list, giving item IDs.
-// Only weapons so far, this will allow the admins to 'give' at item to a player. 
-// '/admingive 1 playerX' would give playerX item 1, a tree branch.
-// The tree branch can be equipped by a warrior or a wizard, but the two are different IDs.
+Am making a brief overview of the items list, giving item IDs.
+Only weapons so far, this will allow the admins to 'give' at item to a player. 
+'/admingive 1 playerX' would give playerX item 1, a tree branch.
+The tree branch can be equipped by a warrior or a wizard, but the two are different IDs.
 
 Format: 
 ID | ItemCode | Name | Type | Material | Slot | ClassType | BuffCode
@@ -32,42 +32,61 @@ wa is the classtype and the buffcode is n1, as it does not have set buffs and ca
 9|W|Blackfired Longsword|longsword|09|mainhand|wa|n3
 10|W|Doomguard's Smite|longsword|10|mainhand|wa|y
 11|W|Ironhand's Fury|longsword|10|mainhand|wa|y
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
+12|W|Splintered Mace|mace|02|mainhand;offhand|wa|n0
+13|W|Iron Mace|mace|04|mainhand/offhand|wa|n1
+14|W|Red Crystal Mace|mace|06|mainhand/offhand|wa|n1
+15|W|Adamantine Mace|mace|08|mainhand/offhand|wa|n2
+16|W|Doomguard's Thorns|mace|10|mainhand/offhand|wa|y
+17|W|Ironhand's Wrath|mace|10|mainhand/offhand|wa|y
+18|W|Wood Bark Shield|shield|01|offhand|wa/pr|n0
+19|W|Rusty Shield|shield|03|offhand|wa/pr|n0
+20|W|Iron Shield|shield|05|offhand|wa/pr|n1
+21|W|Titanium Shield|shield|07|offhand|wa/pr|n2
+22|W|Captain's shield|shield|09|offhand|wa/pr|n3
+23|W|Ironhand's Protector|shield|10|offhand|wa/pr|y
+24|W|Sharp Stick|dagger|01|mainhand/offhand|ro|n0
+25|W|Flint Knife|dagger|02|mainhand/offhand|ro|n0
+26|W|Rusty Dagger|dagger|03|mainhand/offhand|ro|n0
+27|W|Iron Dagger|dagger|04|mainhand/offhand|ro|n1
+28|W|Filigree Dagger|dagger|05|mainhand/offhand|ro|n1
+29|W|Red Crystal Dagger|dagger|06|mainhand/offhand|ro|n1
+30|W|Bloodletting Dagger|dagger|07|mainhand/offhand|ro|n2
+31|W|Diamonte Dagger|dagger|08|mainhand/offhand|ro|n2
+32|W|Shark Tooth Blade|dagger|09|mainhand/offhand|ro|n3
+33|W|Dagger of Shmloe|dagger|10|mainhand/offhand|ro|y
+34|W|Majora's Twinkler|dagger|10|mainhand/offhand|ro|y
+35|W|Wooden Shortsword|shortsword|02|mainhand|ro|n0
+36|W|Iron Shortsword|shortsword|04|mainhand|ro|n1
+37|W|Red Crystal Shortsword|shortsword|06|mainhand|ro|n1
+38|W|Adamantine Shortsword|shortsword|08|mainhand|ro|n2
+39|W|Majora's Tickle Stick|shortsword|10|mainhand|ro|y
+40|W|Table Knife|exotic|01|mainhand|ro|n0
+41|W|Cutlass|exotic|03|mainhand|ro|n0
+42|W|Iron Claws|exotic|05|mainhand|ro|n1
+43|W|Schimitar|exotic|07|mainhand|ro|n2
+44|W|Rainforest Blade|exotic|09|mainhand|ro|n3
+45|W|Machete of Shmole|exotic|10|mainhand|ro|y
+46|W|Tree Branch|staff|01|mainhand,offhand|wi|n0
+47|W|Walking Stick|staff|02|mainhand,offhand|so|n0
+48|W|Quarterstaff|staff|03|mainhand,offhand|wi|n0
+49|W|Deadwood Staff|staff|04|mainhand,offhand|so|n1
+50|W|Rippled Staff|staff|05|mainhand,offhand|wi|n1
+51|W|Ghostly Staff|staff|06|mainhand,offhand|so|n1
+52|W|Channeling Staff|staff|07|mainhand,offhand|wi|n2
+53|W|Soul Crystal Staff|staff|08|mainhand,offhand|so|n2
+54|W|Chilling Staff|staff|09|mainhand,offhand|wi|n3
+55|W|Flaming Staff|staff|09|mainhand,offhand|so|n3
+56|W|Nature's Trunk|staff|10|mainhand,offhand|wi|y
+57|W|Channelled Anger|staff|10|mainhand,offhand|so|y
+58|W|Flame Charm Bracelet|cestus|01|mainhand,offhand|so|n0
+59|W|Peyote Bracelet|cestus|02|mainhand,offhand|wi|n0
+60|W|Sparkling Bracelet|cestus|03|mainhand,offhand|so|n0
+61|W|Threaded Snow Gloves|cestus|04|mainhand,offhand|wi|n1
+62|W|Threaded Fire Gloves|cestus|05|mainhand,offhand|so|n1
+63|W|Waterfall Cestus|cestus|06|mainhand,offhand|wi|n1
+64|W|Storm Greaves|cestus|07|mainhand,offhand|so|n2
+65|W|Iced Cestus|cestus|08|mainhand,offhand|wi|n2
+66|W|Skull Gauntlets|cestus|09|mainhand,offhand|so|n3
+67|W|Flowering Cestus|cestus|09|mainhand,offhand|wi|n3
+68|W|The Lich's Hands|cestus|10|mainhand,offhand|so|y
+69|W|Claws of the Spirit Beast|cestus|10|mainhand,offhand|wi|y
