@@ -4,13 +4,13 @@ Only weapons so far, this will allow the admins to 'give' at item to a player.
 The tree branch can be equipped by a warrior or a wizard, but the two are different IDs.
 
 Format: 
-ID | ItemCode | Name | Type | Material | Slot | ClassType | BuffCode
+ID | ItemCode | Name | Type | Rarity | Slot | ClassType | BuffCode
 
 ID is an integer that applies to one item only.
 ItemCode is a single letter, either W A or M. (weapon, armour, miscellaneous)
 Name is a text field.
 Type defines which subgroup of the ItemCode the item is in. (Longsword)
-Material defines the rarity index of the type. (1)
+Rarity defines the rarity index of the type, and how likely an item is to drop from mobs. (5)
 Slot is where item is equipped. (Mainhand)
 ClassType is a 2 letter code which allows a class to equip the item. (Wa) 
 BuffCode determines whether an item has:
