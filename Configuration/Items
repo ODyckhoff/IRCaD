@@ -90,3 +90,34 @@ wa is the classtype and the buffcode is n1, as it does not have set buffs and ca
 67|W|Flowering Cestus|cestus|09|mainhand,offhand|wi|n3
 68|W|The Lich's Hands|cestus|10|mainhand,offhand|so|y
 69|W|Claws of the Spirit Beast|cestus|10|mainhand,offhand|wi|y
+70|W|Rotted Wooden Greatsword|greatsword|01|mainhand,offhand|pr|n0
+71|W|Splintered Wooden Greatsword|greatsword|02|mainhand,offhand|pr|n0
+72|W|Wooden Greatsword|greatsword|03|mainhand,offhand|pr|n0
+73|W|Rusty Greatsword|greatsword|04|mainhand,offhand|pr|n1
+74|W|Iron Greatsword|greatsword|05|mainhand,offhand|pr|n1
+75|W|Red Crystal Greatsword|greatsword|06|mainhand,offhand|pr|n1
+76|W|Titanium Greatsword|greatsword|07|mainhand,offhand|pr|n2
+77|W|Adamantine Greatsword|greatsword|08|mainhand,offhand|pr|n2
+78|W|Skullcrushing Greatsword|greatsword|09|mainhand,offhand|pr|n3
+79|W|Sword of Zarabriel|greatsword|10|mainhand,offhand|pr|y
+80|W|Hatchet|axe|01|mainhand|pr|n0
+81|W|Iron Axe|axe|03|mainhand|pr|n0
+82|W|Red Crystal Axe|axe|05|mainhand|pr|n1
+83|W|Titanium Axe|axe|07|mainhand|pr|n2
+84|W|Adamantine Axe|axe|09|mainhand|pr|n3
+85|W|Ironhand's Smite|axe|10|mainhand|pr|y
+86|W|Twine Shortbow|shortbow|02|mainhand,offhand|ra|n0
+87|W|Elm Shortbow|shortbow|05|mainhand,offhand|ra|n1
+88|W|Angled Shortbow|shortbow|08|mainhand,offhand|ra|n2
+89|W|Dryad Shortbow|shortbow|09|mainhand,offhand|ra|n3
+90|W|Carved Creatures Bow|shortbow|10|mainhand,offhand|ra|y
+91|W|Crude Longbow|longbow|01|mainhand,offhand|ra|n0
+92|W|Birch Longbow|longbow|04|mainhand,offhand|ra|n1
+93|W|Filigree Longbow|longbow|07|mainhand,offhand|ra|n2
+94|W|Elven Longbow|longbow|09|mainhand,offhand|ra|n3
+95|W|Bow of the Forest|longbow|10|mainhand,offhand|ra|y
+96|W|Splintered Crossbow|crossbow|03|mainhand,offhand|ra|n0
+97|W|Oak Crossbow|crossbow|06|mainhand,offhand|ra|n1
+98|W|Soldier's Crossbow|crossbow|09|mainhand,offhand|ra|n3
+99|W|Furyfire's Wrath|crossbow|10|mainhand,offhand|ra|y
+100|W|Pillow|misc|10|mainhand,offhand|wa,ro,so,wi,pr,ra|y
