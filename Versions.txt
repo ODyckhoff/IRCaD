@@ -1,0 +1,41 @@
+IRCaD Versions
+==============
+
+Current Version: 0.1.27
+
+Version at document creation, 22/01/2013, is: 0.1.27
+
+
+
+Archives
+--------
+
+Previous versions of the IRCaD Project can be found at http://sconesorscones.co.uk/ircad/
+
+How IRCaD Version Numbers Work
+------------------------------
+
+All version numbers will be of the form x.x.x where x will be replaced by a number.
+
+The third number will be incremented by 1 when:
+    * Files are added to the repository (of any kind).
+    * There are minor code updates (including trimming of unused code).
+    * Documentation (including Configuration lists) is updated.
+    * New functionality is created that abstracts trivial tasks.
+    * Minor bug fixes and patches.
+
+The second number will be incremented by 1 when:
+    * Code updates result in a change in functional execution.
+        - When new functionality is created that adds value to the software.
+        - When updates change the overall structure of code in a file.
+        - When functionality is replaced by, or moved to multiple functions.
+    * Major bug fixes and patches. (E.g. in security flaws, or flaws that impair the running of the software)
+    * New features are added.
+    * Components are updated to use new libraries.
+
+The 1st number will be incremented by 1 when:
+    * Elements change that significantly affect the gameplay. (E.g. Implementing duelling between characters)
+    * The codebase undergoes significant structural change.
+        - This may be because the interaction of the system components had been completely redesigned.
+        - Or because the codebase has undergone major revisions.
+    * A significant change in the codebase results in backwards incompatibility.
