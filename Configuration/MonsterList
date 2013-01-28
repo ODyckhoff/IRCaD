@@ -1,58 +1,69 @@
-?Cthulu?
-Frost_Dragon
-Fire_Dragon
-Forest_Dragon
-Water_Dragon
-Lich
-Minotaur
-Ent
-Kind_Spirit
-Evil_Spirit
-Barbarian_Overlord
-Barbarian_Mage
-Barbarian_Brute
-Barbarian_Archer
-Fish
-Huge_Fish
-Water_Sprite
-Water_Sprite_Matriarch
-Forest_Sprite
-Forest_Sprite_Matriarch
-Wolf
-Alpha_Wolf
-Wolf_Cub
-Carnivorous_Plant
-Panther
-Rat
-Giant_Rat
-Falcon
-Rabbit
-Sparrow
-Dire_Wolf
-Alpha_Dire_Wolf
-Dire_Wolf_Cub
-Snow_Sprite
-Snow_Sprite_Matriarch
-Undead_Archer
-Undead_Warrior
-Undead_Mage
-Dire_Spider
-Spider_Hatchling
-Drake
-Sabre
-Sabre_Cub
-Alpha_Sabre
-Scorpion
-Snake
-Basilisk
-Sand_Hopper
-Pegasus
-Hyena
-Hyena_Matriarch
-Harpy
-Harpy_Matriarch
-Enchanted_Armour
-Shail
-Monstrous_Shail
-Frozen_Shail
-Frozen_Monstrous_Shail
+Categories define attack type
+
+Beast:
+* Panther
+* Rat
+* Giant Rat
+* Rabbit
+* Dire Wolf
+* Alpha Dire Wolf
+* Dire Wolf Cub
+* Dire Spider
+* Spider Hatchling
+* Sabre
+* Sabre Cub
+* Alpha Sabre
+* Scorpion
+* Snake
+* Basilisk
+* Sand Hopper
+* Hyena
+* Hyena Matriarch
+
+Flying
+* Falcon
+* Sparrow
+* Drake
+* Pegasus
+* Harpy
+* Harpy Matriarch
+
+Undead
+* Lich
+* Kind Spirit
+* Evil Spirit
+* Undead Archer
+* Undead Warrior
+* Undead Mage
+* Enchanted Armour
+* Shail
+* Monstrous Shail
+* Frozen Shail
+* Monstrous Frozen Shail
+
+Elemental
+* Water Sprite
+* Water Sprite Matriarch
+* Fire Sprite
+* Fire Sprite Matriarch
+* Forest Sprite
+* Forest Sprite Matriarch
+* Snow Sprite
+* Snow Sprite Matriarch
+
+Giant
+* Minotaur
+* Ent
+* Frost Dragon
+* Fire Dragon
+* Forest Dragon
+* Water Dragon
+* Cthulu
+
+Humanoid
+* Barbarian Overlord
+* Barbarian Mage
+* Barbarian Brute
+* Barbarian Archer
+* Village NPC
+
