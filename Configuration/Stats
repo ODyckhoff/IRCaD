@@ -6,7 +6,7 @@ intelligence	int	1-20	    <9 cannot speak properly	    >15 gains ability 'teleki
 constitution	con	1-20	    <9 carry limit decreased	    >15 gains ability 'rock armour' once per rest
  
 Points needed to increase a stat
-10-12: 1
+0-12: 1
 13-15: 2 
 16-18: 3 
 19: 4  
