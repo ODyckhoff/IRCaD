@@ -1,0 +1,79 @@
+Cast list for all classes. Daily spells from skill mastery included.
+
+Format:
+ID|name|command|class|skill|mana|use|dice
+
+Where ID is the spell ID.
+Name is the name of the spell.
+Command is the input to the bot to make the spell. (cast X)
+Class is what classes can cast it.
+Skill is if the spell is tied to a skill. (if no "-")
+Mana is how much mana the spell costs.
+Use is how many times per rest a spell can be used.
+Dice is the dice used for the spell.
+
+Skill spells:
+
+1|Heavy Blow|hblow|wa,pr|str|0|1|d12*mainhand ivl
+2|Take Aim|aim|ro,ra|dex|0|1|d12*mainhand ilvl
+3|Silver Tongued|stongue|wa,ro,pr,wi,so,ra|cha|0|1|d12 roll added to charisma rolls.
+4|Loremaster|loremaster|wa,ro,pr,wi,so,ra|wis|0|1|d12 roll added to wisdom rolls.
+5|Telekinesis|telekinesis|wa,ro,pr,wi,so,ra|int|0|1|Others in combat paralysed.
+6|Rock Armour|rarmour|wa,ro,pr,wi,so,ra|con|0|1|Armour increased by 25%.
+
+Class Spells (ex wizard/sorcerer):
+
+7|Dual Hand Sweep|sweep|wa|-|0|3|d8*mainhand ilvl+d6*offhand ilvl
+8|Shield Bash|sbash|wa|-|0|3|d10*offhand ilvl
+9|Backstab|backstab|ro|-|0|3|d8*mainhand+d6*offhand (can be used with stealth)
+10|Deft Hands|dhands|ro|-|0|3|d12 roll+int skill auto unlocks every lock in room. (if int is low some will not be unlocked)
+11|Cleaving Blow|cblow|pr|-|0|3|d12*mainhand ilvl
+12|Fury Stomp|fstomp|pr|-|0|3|All hostile mobs in combat attack caster.
+13|Aimed Shot|ashot|ra|-|0|3|d12*mainhand ilvl
+14|Summon|summon|ra|-|0|1|Makes a random 'beast' appear to protect the caster who will attack anything player attacks.
+
+Sorcerer Spells:
+15|Fire Shot|fshot|so|-|10|8|(int*d6)/6
+16|Grave Beam|gbeam|so|-|10|8|(int*d6/6
+17|Jolt|jolt|so|-|10|8|(int*d6)/6
+18|Fireball|fireball|so|-|25|4|(int*d8)/5
+19|Deathbeam|dbeam|so|-|25|4|(int*d8)/5
+20|Electrify|electrify|so|-|25|4|(int*d8)/5
+21|Fire Blast|fblast|so|-|50|2|(int*d10)/4
+22|Sap life|sap|so|-|50|2|(int*d10)/4
+23|Lightning Blast|lblast|so|-|50|2|(int*d10)/4
+24|Firescape|firescape|so|-|100|1|(int*12)/2
+
+25|Curse of static|static|so|-|10|8|(int*d6)/20 per turn
+26|Curse of dehydrate|dehydrate|so|-|10|8|(int*d6)/20 per turn
+27|Curse of illness|ilness|so|-|10|8|(int*d6)/20 per turn
+28|Cripple|cripple|so|-|25|4|(int*d8)/12 per turn
+29|Burning|burning|so|-|25|4|(int*d8)/12 per turn
+30|Leech life|llife|so|-|25|4|(int*d8)/12 per turn, 50% of damage added to caster health
+31|Serrate|serrate|so|-|50|2|(int*d10)/5 per turn
+32|Burn weapon|bweapon|so|-|50|2|(int*d10)/5 per turn, 
+33|Drain group|dgroup|so|-|50|2|(int*d10)/5 per turn, 50% of main target damage taken for all hostiles in combat
+34|Vampirism|vampirism|so|-|100|1|(int*d12)/2 per turn, same amount taken added to caster health
+
+Wizard Spells:
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
