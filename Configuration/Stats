@@ -13,9 +13,9 @@ Points needed to increase a stat
 20: 5
 
 
-stats start at 10
-starting points: 10
-points per level: 5
+stats start at 10 each
+starting points: 6
+points per level: 3
 
         
 human 		+2 wis -2 dex +1 int -1 cha
