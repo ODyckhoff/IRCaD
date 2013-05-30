@@ -1,9 +1,9 @@
-strength      str	1-20	    <9 hurts self with weapons 		>15 gains ability 'heavy blow' once per rest
-dexterity	    dex	1-20	    <9 clumsy				              >15 gains ability 'take aim' once per rest
-charisma	    cha	1-20	    <9 gets terrible shop deals		>15 gains ability 'silver tongued' once per rest
-wisdom		    wis	1-20	    <9 forgets things			        >15 gains ability 'loremaster' once per rest
-intelligence	int	1-20	    <9 cannot speak properly	    >15 gains ability 'telekinesis' once per rest
-constitution	con	1-20	    <9 carry limit decreased	    >15 gains ability 'rock armour' once per rest
+strength      str	1-20	    <9 hurts self with weapons 		>18 gains ability 'heavy blow' once per rest
+dexterity	    dex	1-20	    <9 clumsy				              >18 gains ability 'take aim' once per rest
+charisma	    cha	1-20	    <9 gets terrible shop deals		>18 gains ability 'silver tongued' once per rest
+wisdom		    wis	1-20	    <9 forgets things			        >18 gains ability 'loremaster' once per rest
+intelligence	int	1-20	    <9 cannot speak properly	    >18 gains ability 'telekinesis' once per rest
+constitution	con	1-20	    <9 carry limit decreased	    >18 gains ability 'rock armour' once per rest
  
 Points needed to increase a stat
 0-12: 1
@@ -52,9 +52,9 @@ Classes
     * Can use daggers, swords and exotics(schimitars, machetes)
     * Feats
           * Assassin path
-            1. Enables 'stealth', some monsters can see you. 30% damage when stealthed.
-            2. 50% chance for a monster to see you when stealthed if it can see stealth.
-            3. Enables 'Backstab' move
+            1. Enables 'stealth', some monsters can see you. +30% damage when stealthed, but turns off in combat.
+            2. 50% chance for a monster to see you when stealthed if it can see stealth, able to combat stealth.
+            3. Enables 'Backstab' move.
           * Locksmith path
             1. Able to open basic locks and reveal all traps
             2. Able to open average locks and disarm basic traps
