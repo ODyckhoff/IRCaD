@@ -12,6 +12,15 @@ Mana is how much mana the spell costs.
 Use is how many times per rest a spell can be used.
 Dice is the dice used for the spell.
 
+Anyone:
+
+0|Unlock|unlock|wa,ro,pr,wi,so,ra|-|-|(explanation below)
+
+If a rogue casts unlock on a container, the die used is d10, if else, d6.
+The container has a lock level. Easy (1-50) Medium (51-100) Hard (101-150) Impossible (151-200)
+Rogue: IF((containerlock)<(dex*d10)) container=unlocked, else container=locked
+Else:  IF((containerlock)<(dex*d6))  container=unlocked, else container=locked
+
 Skill spells:
 
 1|Heavy Blow|hblow|wa,pr|str|0|1|d12*mainhand ivl
@@ -56,24 +65,24 @@ Sorcerer Spells:
 34|Vampirism|vampirism|so|-|100|1|(int*d12)/2 per turn, same amount taken added to caster health
 
 Wizard Spells:
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
+35|Ice Ray|iceray|wi|-|10|8|(int*d6)/6
+36|Arcane Burst|aburst|wi|-|10|8|(int*d6)/6
+37|Vine Wrap|vwrap|wi|-|10|8|(int*d6)/20 per turn
+38|Ice Ball|iceball|wi|-|25|4|(int*d8)/5
+39|Drain|drain|wi|-|25|4|(int*d8)/12 per turn
+40|Nature's Hate|nhate|wi|-|25|4|(int*d8)/12 per turn
+41|Ice Blast|iblast|wi|-|50|2|(int*d10)/4
+42|Falling Tree|treefall|wi|-|50|2|(int*d10)/4
+43|Furious Knitting|knitting|wi|-|50|2|(int*d10)/5 per turn, after 5 turns (int*d4) damage
+44|Arcane Fury|afury|wi|-|100|1|(int*d12)/2 per turn
 
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
+45|Light|light|wi|-|10|8|(int*d6) illuminates stealthed mobs/PCs, gives the effect of 'see stealth'
+46|Freeze|freeze|wi|-|10|8|(d6) paralyses a mob for d6 turns
+47|Lesser Heal|lheal|wi|-|10|8|(int*d6)/6 Heals PC for this amount per turn
+48|Flare|flare|wi|-|25|4|(d8)/ Sends up a flare that illuminates d8 squares around you, as with light
+49|Conjure food|cfood|wi|-|25|4|(int*d8)/12  conjures this many sweetrolls
+50|Revitalise|revitalise|wi|-|25|4|(int*d8)/12 per turn added to PC health
+51|Safe Bubble|bubble|wi|-|50|2|(int*d10) conjures a bubble that can absorb this amount of damage before it bursts.
+52|Magic Mapping|mmap|wi|-|50|2|(d10) lists this many features closest to PC (houses, shrines etc)
+53|Group Heal|gheal|wi|-|50|2|(int*d10)/4 per turn shared between group health
+54|Minute of Invulnerability|invulnerable|wi|-|100|1|One minute no damage taken.
