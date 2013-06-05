@@ -1,69 +1,77 @@
-Categories define attack type
+Categories define attack type, monsters are group 1-5 in stats. 
+
+Groups:
+* Award (n) XP where n is the group number.
+* 50HP + (n-1)25
+* If magic, 50MP + (n-1)25
+* Stats 8 + (n-1)2
+* int used when magic, str used when melee
+* Does ((d4*str|int)/6, (d6*str|int)/5, (d8*str|int)/4, (d10*str|int)/3, (d12*str|int/2) per group.
 
 Beast:
-* Panther
-* Rat
-* Giant Rat
-* Rabbit
-* Dire Wolf
-* Alpha Dire Wolf
-* Dire Wolf Cub
-* Dire Spider
-* Spider Hatchling
-* Sabre
-* Sabre Cub
-* Alpha Sabre
-* Scorpion
-* Snake
-* Basilisk
-* Sand Hopper
-* Hyena
-* Hyena Matriarch
+* Panther 2
+* Rat 1
+* Giant Rat 2
+* Rabbit 1
+* Dire Wolf 2
+* Alpha Dire Wolf 3
+* Dire Wolf Cub 1
+* Dire Spider 2
+* Spider Hatchling 1
+* Sabre 2
+* Sabre Cub 2
+* Alpha Sabre 3
+* Scorpion 1
+* Snake 1
+* Basilisk 3
+* Sand Hopper 1
+* Hyena 2
+* Hyena Pup
+* Hyena Matriarch 3
+* Chicken 1
 
-Flying
-* Falcon
-* Sparrow
-* Drake
-* Pegasus
-* Harpy
-* Harpy Matriarch
+Flying:
+* Falcon 1
+* Sparrow 1
+* Drake 4
+* Pegasus 3
+* Harpy 3
+* Harpy Matriarch 4
 
-Undead
-* Lich
-* Kind Spirit
-* Evil Spirit
-* Undead Archer
-* Undead Warrior
-* Undead Mage
-* Enchanted Armour
-* Shail
-* Monstrous Shail
-* Frozen Shail
-* Monstrous Frozen Shail
+Undead:
+* Lich 5
+* Kind Spirit 3
+* Evil Spirit 3
+* Undead Warrior 3
+* Undead Mage 3
+* Enchanted Armour 2
+* Shail 2
+* Monstrous Shail 3
+* Frozen Shail 3
+* Monstrous Frozen Shail 4
 
-Elemental
-* Water Sprite
-* Water Sprite Matriarch
-* Fire Sprite
-* Fire Sprite Matriarch
-* Forest Sprite
-* Forest Sprite Matriarch
-* Snow Sprite
-* Snow Sprite Matriarch
+Elemental:
+* Water Sprite 2
+* Water Sprite Matriarch 3
+* Fire Sprite 2
+* Fire Sprite Matriarch 3
+* Forest Sprite 2
+* Forest Sprite Matriarch 3
+* Snow Sprite 2 
+* Snow Sprite Matriarch 3
 
-Giant
-* Minotaur
-* Ent
-* Frost Dragon
-* Fire Dragon
-* Forest Dragon
-* Water Dragon
-* Cthulu
+Giant:
+* Minotaur 4
+* Ent 4
+* Frost Dragon 5
+* Fire Dragon 5
+* Forest Dragon 5
+* Water Dragon 5
 
-Humanoid
-* Barbarian Overlord
-* Barbarian Mage
-* Barbarian Brute
-* Barbarian Archer
-* Village NPC
-
+Humanoid:
+* Barbarian Overlord 2
+* Barbarian Mage 1
+* Barbarian Brute 1
+* Troll 1
+* Troll Mage 1
+* Troll Leader 2
