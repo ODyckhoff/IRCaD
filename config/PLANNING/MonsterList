@@ -7,70 +7,44 @@ Groups:
 * int used when magic, str used when melee
 * Does ((d4*str|int)/6, (d6*str|int)/5, (d8*str|int)/4, (d10*str|int)/3, (d12*str|int/2) per group.
 
-Beast:
-* Panther 2
-* Rat 1
-* Giant Rat 2
-* Rabbit 1
-* Dire Wolf 2
-* Alpha Dire Wolf 3
-* Dire Wolf Cub 1
-* Dire Spider 2
-* Spider Hatchling 1
-* Sabre 2
-* Sabre Cub 2
-* Alpha Sabre 3
-* Scorpion 1
-* Snake 1
-* Basilisk 3
-* Sand Hopper 1
-* Hyena 2
-* Hyena Pup
-* Hyena Matriarch 3
-* Chicken 1
+Name|Type|str,int|group|Habitat|allignment
 
-Flying:
-* Falcon 1
-* Sparrow 1
-* Drake 4
-* Pegasus 3
-* Harpy 3
-* Harpy Matriarch 4
+Rat|beast|str|1|farmland|neutral
+Cow|beast|str|1|farmland|neutral
+Chicken|beast|str|1|farmland|neutral
+Rabbit|beast|str|1|grassland|neutral
+Hawk|beast|str|1|grassland|neutral
+Deer|beast|str|1|grassland|neutral
+Highwayman|humanoid|str|1|grassland|hostile
+Earthminion|elemental|int|1|grassland|hostile
+Earthshard|elemental|int|1|grassland|hostile
+Zombie|undead|str|1|shrubland|hostile
+Zombiemage|undead|int|1|shrubland|hostile
+Wildcat|beast|str|1|shrubland|hostile
+Wolfcub|beast|str|1|shrubland|hostile
+Troll|humanoid|str|1|shrubland|hostile
+Trollmage|humanoid|int|1|shrubland|hostile
 
-Undead:
-* Lich 5
-* Kind Spirit 3
-* Evil Spirit 3
-* Undead Warrior 3
-* Undead Mage 3
-* Enchanted Armour 2
-* Shail 2
-* Monstrous Shail 3
-* Frozen Shail 3
-* Monstrous Frozen Shail 4
+Python|beast|str|2|swamp|hostile
+WaterElemental|elemental|int|2|swamp|hostile
+Wolf|beast|str|2|forest|hostile
+Panther|beast|str|2|forest|hostile
+Poacher|humanoid|str|2|forest|hostile
+Barbarian|humanoid|str|2|tundra|hostile
+Shail|undead|int|2|tundra|hostile
+Direwolfcub|beast|str|2|tundra|hostile
 
-Elemental:
-* Water Sprite 2
-* Water Sprite Matriarch 3
-* Fire Sprite 2
-* Fire Sprite Matriarch 3
-* Forest Sprite 2
-* Forest Sprite Matriarch 3
-* Snow Sprite 2 
-* Snow Sprite Matriarch 3
+Direwolf|beast|str|3|deepforest|hostile
+Alphawolf|beast|str|3|deepforest|hostile
+Forestsprite|elemental|int|3|deepforest|hostile
+Snowsprite|elemental|int|3|taiga|hostile
+ZombieMage|undead|int|3|taiga|hostile
+Zombielord|undead|str|3|taiga|hostile
 
-Giant:
-* Minotaur 4
-* Ent 4
-* Frost Dragon 5
-* Fire Dragon 5
-* Forest Dragon 5
-* Water Dragon 5
+Alphadirewolf|beast|str|4|taiga|hostile
+Ent|giant|str|4|deepforest|neutral
+SnowSpriteMatriarch|elemental|int|4|taiga|hostile
+ForestSpriteMatriarch|elemental|int|4|deepforest|hostile
 
-Humanoid:
-* Barbarian Overlord 2
-* Barbarian Mage 1
-* Barbarian Brute 1
-* Troll 1
-* Troll Mage 1
-* Troll Leader 2
+Minotaur|giant|str|5|mountaincave|hostile
+Dragon|giant|str|5|mountaincave|hostile
