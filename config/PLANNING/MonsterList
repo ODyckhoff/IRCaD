@@ -25,8 +25,8 @@ Zombie|undead|str|3|shrubland|hostile
 Zombiemage|undead|int|3|shrubland|hostile
 Wildcat|beast|str|3|shrubland|hostile
 Wolfcub|beast|str|3|shrubland|hostile
-Troll|humanoid|str|3|shrubland|hostile
-Trollmage|humanoid|int|3|shrubland|hostile
+Troll|humanoid|str|3|shrubland|neutral
+Trollmage|humanoid|int|3|shrubland|neutral
 
 Wolf|beast|str|4|forest|hostile
 Panther|beast|str|4|forest|hostile
