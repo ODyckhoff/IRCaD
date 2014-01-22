@@ -18,8 +18,8 @@ Anyone:
 
 If a rogue casts unlock on a container, the die used is d10, if else, d6.
 The container has a lock level. Easy (1-50) Medium (51-100) Hard (101-150) Impossible (151-200)
-Rogue: IF((containerlock)<(dex*d10)) container=unlocked, else container=locked
-Else:  IF((containerlock)<(dex*d6))  container=unlocked, else container=locked
+Rogue: IF((containerlock)<(int*d10)) container=unlocked, else container=locked
+Else:  IF((containerlock)<(int*d6))  container=unlocked, else container=locked
 
 Skill spells:
 
