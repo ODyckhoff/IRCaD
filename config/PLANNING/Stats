@@ -17,13 +17,13 @@ stats start at 10 each
 starting points: 10
 points per level: 5
 
-        
-human 		+2 wis -2 dex +1 int -1 cha
-elf 		+2 int -2 con +1 wis -1 dex
-half elf 	+2 cha -2 wis +1 dex -1 str
-dwarf 		+2 con -2 int +1 str -1 wis
-gnome 		+2 dex -2 str +1 cha -1 con
-half giant	+2 str -2 cha +1 con -1 int
+Starting Class Stats:
+Warrior:  +2 Str, +1 Con
+Rogue:    +2 Int, +1 Dex
+Sorcerer: +2 Cha, +1 Wis
+Wizard:   +2 Wis, +1 Int
+Protector:+2 Con, +1 Str
+Ranger:   +2 Dex, +1 Cha
 
 Classes
 
