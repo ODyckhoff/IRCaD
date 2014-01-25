@@ -1,0 +1,57 @@
+Map planning, rooms, areas, land types etc.
+
+
+MAP GENERATION
+
+* If map already exists, skip map generation
+* Take (x) and (y) measurements.
+* Check (x) and (y) are both >20, <100 and are both odd numbers.
+* Generates world_map
+* Generates town_map
+* (Placeholder for cave maps, but we won't put these in yet)
+* Generates entities
+
+
+WORLD_MAP
+
+* Generate an (x) by (y) grid
+
+* Generate a town in the median square (centre)
+
+* Generate 4 town gates in the squares n,s,e,w of the town
+
+* Place Object_Tiles
+  - (20)Farmland tile radius 2 blocks from the town, not replacing gates
+  - (3)MountainCave tile >((x+y)/4) blocks from town, surrounded on 8 sides by mountain tile
+  - (1)Lair tile >((x+y)/4) blocks from town, surrounded on 8 sides by mountain tile
+  
+* Generate tiles (SNT = SpawnNextTo, spawn these tiles in the 9 blocks around it, not replacing ones that already exist)
+  - Grassland
+  Must spawn around Farmland
+  SNT Grassland(0.5), Shrubland(0.4), Forest(0.1)
+  - Shrubland
+  SNT Shrubland(0.3), Grassland(0.2), Forest(0.2), Swamp (0.2), Tundra(0.1)
+  - Forest
+  SNT Forest(0.4), Shrubland(0.1), Deepforest(0.2), Grassland(0.1), Taiga(0.1), Tundra(0.1)
+  - Swamp
+  SNT Swamp(0.4), Shrubland(0.4), Tundra(0.1), Taiga(0.1)
+  - Tundra
+  SNT Tundra(0.3), Taiga(0.3), Forest(0.2), Shrubland(0.1), Swamp(0.1)
+  - Deepforest
+  SNT Deepforest(0.5), Forest(0.5)
+  - Taiga
+  SNT Taiga(0.4), Tundra(0.3), Forest(0.2), Swamp(0.1)
+
+* Place Landforms
+TO BE ADDED
+
+
+
+
+TOWN_MAP
+
+Entities going into the town square enter different map.
+TO BE ADDED
+
+
+
