@@ -2,20 +2,26 @@
 #include "tile.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 tile_t* new_tile(char *name, int x, int y) {
     
-    tile_t *init = malloc(sizeof(tile_t));
-    if(init == NULL) {
+    tile_t *tile = malloc(sizeof(tile_t));
+    if(tile == NULL) {
         fprintf(stderr, "Error, could not allocate memory for tile_t structure\n");
         exit(1); /* Exit codes to be defined for subsequent cycles */
     }
 
-    init->name = name;
-    init->x = x;
-    init->y = y;
+    tile->name = name;
+    tile->x = x;
+    tile->y = y;
 
-    return init;
+    if(strcmp(tile->name, "town") == 0)
+        tile->sub_map = new_map("town", 3, 3);
+
+    /* cave map init code here */
+
+    return tile;
 }
 
 void print_tile(tile_t *cur_tile) {

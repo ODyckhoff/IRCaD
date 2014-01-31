@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-map_t* new_map(char* id, int width, int length) {
+map_t* new_map(char *id, int width, int length) {
 
     int i, j;
 
@@ -68,8 +68,9 @@ void world_gen(map_t *map) {
     int width_m = (map->width - 1)/2;
     int length_m = (map->length - 1)/2;
 
-    /* Set centre tile_t structure to "town" type. */
+    /* Set centre tile_t structure to "town" type. Set tile sub_map to new town map. */
     map->grid[width_m][length_m]->name = "town";
+    map->grid[width_m][length_m]->sub_map = new_map("town", 3, 3);
 
 }
 
@@ -101,6 +102,9 @@ int main(int argc, char **argv) {
 
     printf("Testing printing of map.\n");
     print_map(map);
+
+    printf("Testing printing of town map\n");
+    print_map(map->grid[4][4]->sub_map);
 
     return 0;
 }
