@@ -69,8 +69,8 @@ void world_gen(map_t *map) {
     int length_m = (map->length - 1)/2;
 
     /* Set centre tile_t structure to "town" type. Set tile sub_map to new town map. */
-    map->grid[width_m][length_m]->name = "town";
-    map->grid[width_m][length_m]->sub_map = new_map("town", 3, 3);
+    tile_t *tile_m = map->grid[width_m][length_m];
+    set_tile_name(tile_m, "town");
 
 }
 

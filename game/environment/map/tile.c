@@ -16,12 +16,24 @@ tile_t* new_tile(char *name, int x, int y) {
     tile->x = x;
     tile->y = y;
 
-    if(strcmp(tile->name, "town") == 0)
-        tile->sub_map = new_map("town", 3, 3);
+    return tile;
+}
+
+void set_tile_name(tile_t *tile, char *name) {
+    /* Set the ID of a tile, and check if a sub map is needed */
+    tile->name = name;
+
+    /* Check if the name is significant */
+    if(strcmp(name, "town") == 0)
+        link_sub_map(tile, "town", 5, 5); /* TODO: Optional town sizes */
 
     /* cave map init code here */
+}
 
-    return tile;
+void link_sub_map(tile_t *tile, char *mapid, int width, int length) {
+    /* Link a tile to a relevant sub map */
+
+    tile->sub_map = new_map(mapid, width, length);
 }
 
 void print_tile(tile_t *cur_tile) {
