@@ -8,10 +8,10 @@ map_t* new_map(char* id, int width, int length) {
     int i, j;
 
     /* First we ensure that width and length are odd numbers */
-    if(width & 1)
+    if((width & 1) == 0)
         width++;
 
-    if(length & 1)
+    if((length & 1) == 0)
         length++;
 
     /* Allocate memory the size of a map_t structure + the size of the contained grid of tile_t structures */
@@ -89,7 +89,7 @@ int main(int argc, char **argv) {
 /* Main function only for purposes of map testing. TO BE REMOVED IN SUBSEQUENT CYCLES. */
 
     printf("Generating Map.\n");
-    map_t *map = new_map(8, 8);
+    map_t *map = new_map("world", 8, 8);
 
     if(map == NULL)
         printf("Map generation failed.\n");
