@@ -3,29 +3,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-map_t* new_map(int width, int length) {
+map_t* new_map(char* id, int width, int length) {
 
     int i, j;
 
     /* Allocate memory the size of a map_t structure + the size of the contained grid of tile_t structures */
-    map_t *init = malloc((sizeof(map_t) - sizeof(tile_t)) + (sizeof(tile_t)*width*length));
-    if(init == NULL) {
+    map_t *map = malloc((sizeof(map_t) - sizeof(tile_t)) + (sizeof(tile_t)*width*length));
+    if(map == NULL) {
         fprintf(stderr, "Error, could not allocate memory for map_t structure\n");
         exit(1); /* Exit codes to be defined for subsequent cycles */
     }
 
-    init->width = width;
-    init->length = length;
-    init->grid = (tile_t***) malloc(width * sizeof(tile_t**)); /* Allocate memory for 1st dimension */
-    if(init->grid == NULL) {
+    map->id = id;
+    map->width = width;
+    map->length = length;
+    map->grid = (tile_t***) malloc(width * sizeof(tile_t**)); /* Allocate memory for 1st dimension */
+    if(map->grid == NULL) {
         fprintf(stderr, "Error, could not allocate memory for map_t->grid\n");
         exit(1); /* Exit codes to be defined for subsequent cycles */
     }
 
     /* Fill the grid with blank tiles - PRE-ALPHA STAGE ONLY; SUBSEQUENT SOFTWARE CYCLES WILL POPULATE INTELLIGENTLY */
     for(i = 0; i <= width; i++) {
-        init->grid[i] = (tile_t**) malloc(length * sizeof(tile_t *)); /* Allocate memory per row for 2nd dimension */
-        if(init->grid[i] == NULL) {
+        map->grid[i] = (tile_t**) malloc(length * sizeof(tile_t *)); /* Allocate memory per row for 2nd dimension */
+        if(map->grid[i] == NULL) {
             fprintf(stderr, "Error, could not allocate memory for map_t->grid[%d]\n", i);
             exit(1); /* Exit codes to be defined for subsequent cycles */
         }
@@ -33,11 +34,11 @@ map_t* new_map(int width, int length) {
         /* In subsequent software cycles, this inner loop should be removed and `calloc` should be used above to zero-initialise pointers. */
         /* Map population will be be handled in a separate function in this file. */
         for(j = 0; j <= length; j++) {
-            init->grid[i][j] = new_tile("blank", i, j);
+            map->grid[i][j] = new_tile("blank", i, j);
         }
     }
 
-    return init;
+    return map;
 }
 
 void print_map(map_t *map) {
