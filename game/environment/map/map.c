@@ -55,6 +55,24 @@ void print_map(map_t *map) {
     }
 }
 
+void world_gen(map_t *map) {
+/* This function will generate a world map */
+
+
+}
+
+void town_gen(map_t *map) {
+/* This function will generate a town map */
+
+
+}
+
+void cave_gen(map_t *map) {
+/* This function will generate a cave map */
+
+
+}
+
 int main(int argc, char **argv) {
 /* Main function only for purposes of map testing. TO BE REMOVED IN SUBSEQUENT CYCLES. */
 
