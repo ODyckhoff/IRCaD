@@ -7,6 +7,13 @@ map_t* new_map(char* id, int width, int length) {
 
     int i, j;
 
+    /* First we ensure that width and length are odd numbers */
+    if(width & 1)
+        width++;
+
+    if(length & 1)
+        length++;
+
     /* Allocate memory the size of a map_t structure + the size of the contained grid of tile_t structures */
     map_t *map = malloc((sizeof(map_t) - sizeof(tile_t)) + (sizeof(tile_t)*width*length));
     if(map == NULL) {
@@ -58,6 +65,11 @@ void print_map(map_t *map) {
 void world_gen(map_t *map) {
 /* This function will generate a world map */
 
+    int width_m = (map->width - 1)/2;
+    int length_m = (map->length - 1)/2;
+
+    /* Set centre tile_t structure to "town" type. */
+    map->grid[width_m][length_m]->name = "town";
 
 }
 
@@ -77,12 +89,15 @@ int main(int argc, char **argv) {
 /* Main function only for purposes of map testing. TO BE REMOVED IN SUBSEQUENT CYCLES. */
 
     printf("Generating Map.\n");
-    map_t *map = new_map(10, 10);
+    map_t *map = new_map(8, 8);
 
     if(map == NULL)
         printf("Map generation failed.\n");
     else
         printf("Hurray, we have a map! Generation succeeded.\n");
+
+    printf("Testing town placement in world_gen\n");
+    world_gen(map);
 
     printf("Testing printing of map.\n");
     print_map(map);
