@@ -50,8 +50,24 @@ TO BE ADDED
 
 TOWN_MAP
 
-Entities going into the town square enter different map.
-TO BE ADDED
-
-
+* Entities going into the town square enter different map.
+* Town_map is always (5, 5) in size:
+  (0,0) (0,1) (0,2) (0,3) (0,4) etc
+* Place the following tiles:
+(0,2), (4,2), (2,0), (2,4) Town Gates, these have 2 exits (one leaving the town_map in the direction indicated)
+(2,2) Guild Hall
+(0,0) Brewing Garden, exit east.
+(0,4) Workshop, exit west.
+(4,0) Alchemical Lab, exit east.
+(4,4) Black Market, exit west.
+(0,1) Farmer's Market, exit south, west.
+(0,3) Weapon/Armour Shop, exit south, east.
+(4,1) Potion Shop, exit north, west.
+(4,3) Abandoned House, exit north, (LOCKED) east.
+(1,0), (1,4), (3,0), (3,4) NPC House, only one possible exit.
+* The following tiles are random placement on squares:  (1,2), (3,2), (2,1), (2,3)
+<town name> Park
+<town name> Shrine
+<town name> Outdoor Cafe
+<town name> Plaza
 
