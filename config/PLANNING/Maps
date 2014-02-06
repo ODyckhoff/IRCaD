@@ -75,12 +75,12 @@ TOWN_MAP
 <town name> Outdoor Cafe
 <town name> Plaza
 
-Tile Numbers
-============
+LIST OF TILES (42 TOTAL)
 
-0 - Blank
+NULL TYPE
+0  - Blank
 
-TOWN TYPES
+TOWN TYPE
 1  - Internal North Town Gate
 2  - Internal East Town Gate
 3  - Internal South Town Gate
@@ -103,24 +103,26 @@ TOWN TYPES
 20 - Outdoor Cafe
 21 - Plaza
 
-WORLD TYPES
-22 - External North Town Gate
-23 - External East Town Gate
-24 - External South Town Gate
-25 - External West Town Gate
-26 - Farmland
-27 - Mountain Cave
-28 - Mountain
-29 - Lair
-30 - Grassland
-31 - Shrubland
-32 - Forest
-33 - Swamp
-34 - Tundra
-35 - Deep Forest
-36 - Taiga
+WORLD TYPE
+22 - Town
+23 - External North Town Gate
+24 - External East Town Gate
+25 - External South Town Gate
+26 - External West Town Gate
+27 - Farmland
+28 - Mountain Cave
+29 - Mountain
+23 - Lair
+31 - Grassland
+32 - Shrubland
+33 - Forest
+34 - Swamp
+35 - Tundra
+36 - Deep Forest
+37 - Taiga
+38 - External Cave
 
-CAVE TYPES
-37 - Cave
-38 - Dungeon
-39 - Treasure Room
+CAVE TYPE
+39 - Internal Cave
+40 - Dungeon
+41 - Treasure Room
