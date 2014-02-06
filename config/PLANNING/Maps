@@ -75,3 +75,52 @@ TOWN_MAP
 <town name> Outdoor Cafe
 <town name> Plaza
 
+Tile Numbers
+============
+
+0 - Blank
+
+TOWN TYPES
+1  - Internal North Town Gate
+2  - Internal East Town Gate
+3  - Internal South Town Gate
+4  - Internal West Town Gate
+5  - Guild Hall
+6  - Brewing Garden
+7  - Workshop
+8  - Alchemical Lab
+9  - Black Market
+10 - Farm Market
+11 - Weapon and Armour Shop
+12 - Potion Shop
+13 - Abandoned House
+14 - NPC House 1
+15 - NPC House 2
+16 - NPC House 3
+17 - NPC House 4
+18 - Park
+19 - Shrine
+20 - Outdoor Cafe
+21 - Plaza
+
+WORLD TYPES
+22 - External North Town Gate
+23 - External East Town Gate
+24 - External South Town Gate
+25 - External West Town Gate
+26 - Farmland
+27 - Mountain Cave
+28 - Mountain
+29 - Lair
+30 - Grassland
+31 - Shrubland
+32 - Forest
+33 - Swamp
+34 - Tundra
+35 - Deep Forest
+36 - Taiga
+
+CAVE TYPES
+37 - Cave
+38 - Dungeon
+39 - Treasure Room
