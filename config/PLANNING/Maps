@@ -94,11 +94,12 @@ LIST OF TILES (35 TOTAL)
 	13 - Shrine
 	14 - Outdoor Cafe
 	15 - Plaza
+	16 - Town
 
 	WORLD TYPE
 	0  - Blank
 	1  - Town
-	2  - External North Town Gate
+	2  - External Town Gate
 	3  - Farmland
 	4  - Mountain Cave
 	5  - Mountain
