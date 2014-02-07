@@ -79,7 +79,7 @@ LIST OF TILES (35 TOTAL)
 
 	TOWN TYPE
 	0  - Blank
-  1  - Internal Town Gate
+	1  - Internal Town Gate
 	2  - Guild Hall
 	3  - Brewing Garden
 	4  - Workshop
