@@ -1,3 +1,5 @@
+![IRCaD Logo](http://sconesorscones.co.uk/dev/IRCaD/IRCaD.png)
+
 IRCaD
 =====
 
