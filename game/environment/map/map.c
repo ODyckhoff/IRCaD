@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-map_t* new_map(char *id, int width, int length) {
+char* maptype_names[] = {"NULL", "World Map", "Town Map", "Cave Map"};
+
+map_t* new_map(int mapid, int width, int length) {
 
     int i, j;
 
@@ -21,7 +23,7 @@ map_t* new_map(char *id, int width, int length) {
         exit(1); /* Exit codes to be defined for subsequent cycles */
     }
 
-    map->id = id;
+    map->id = mapid;
     map->width = width;
     map->length = length;
     map->grid = (tile_t***) malloc(width * sizeof(tile_t**)); /* Allocate memory for 1st dimension */
@@ -41,11 +43,15 @@ map_t* new_map(char *id, int width, int length) {
         /* In subsequent software cycles, this inner loop should be removed and `calloc` should be used above to zero-initialise pointers. */
         /* Map population will be be handled in a separate function in this file. */
         for(j = 0; j <= length; j++) {
-            map->grid[i][j] = new_tile("blank", i, j);
+            map->grid[i][j] = new_tile(mapid, i, j);
         }
     }
 
     return map;
+}
+
+char* get_map_name(int id) {
+    return maptype_names[id];
 }
 
 void print_map(map_t *map) {
@@ -54,35 +60,48 @@ void print_map(map_t *map) {
 
     for(j = 0; j < map->length; j++) {
 
-        printf("[");
         for(i = 0; i < map->width; i++) {
-            printf("['%s': (%d, %d)]", map->grid[i][j]->name, map->grid[i][j]->x, map->grid[i][j]->y);
+            printf("[%d,%d]", map->grid[i][j]->x, map->grid[i][j]->y);
         }
-        printf("]\n");
+        printf("\n");
     }
 }
 
 void world_gen(map_t *map) {
 /* This function will generate a world map */
+    if(map->id != WORLDMAP) {
+        fprintf(stderr, "Error, provided map for world generation is not a WORLDMAP type\n");
+        exit(1);
+    }
 
     int width_m = (map->width - 1)/2;
     int length_m = (map->length - 1)/2;
 
     /* Set centre tile_t structure to "town" type. Set tile sub_map to new town map. */
     tile_t *tile_m = map->grid[width_m][length_m];
-    set_tile_name(tile_m, "town");
+    set_id(tile_m, TOWN);
+    print_tile(tile_m);
 
 }
 
 void town_gen(map_t *map) {
 /* This function will generate a town map */
+    if(map->id != TOWNMAP) {
+        fprintf(stderr, "Error, provided map for world generation is not a TOWNMAP type\n");
+        exit(1);
+    }
 
+    int width_m = (map->width - 1)/2;
+    int length_m = (map->length - 1)/2;
 
 }
 
 void cave_gen(map_t *map) {
 /* This function will generate a cave map */
-
+    if(map->id != CAVEMAP) {
+        fprintf(stderr, "Error, provided map for world generation is not a WORLDMAP type\n");
+        exit(1);
+    }
 
 }
 
@@ -90,7 +109,7 @@ int main(int argc, char **argv) {
 /* Main function only for purposes of map testing. TO BE REMOVED IN SUBSEQUENT CYCLES. */
 
     printf("Generating Map.\n");
-    map_t *map = new_map("world", 8, 8);
+    map_t *map = new_map(WORLDMAP, 8, 8);
 
     if(map == NULL)
         printf("Map generation failed.\n");
@@ -104,7 +123,10 @@ int main(int argc, char **argv) {
     print_map(map);
 
     printf("Testing printing of town map\n");
-    print_map(map->grid[4][4]->sub_map);
+    if(map->grid[4][4]->sub_map == NULL)
+        fprintf(stderr, "Error, no Town Map linked\n");
+    else
+        print_map(map->grid[4][4]->sub_map);
 
     return 0;
 }
