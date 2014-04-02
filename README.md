@@ -34,6 +34,8 @@ This is partially because I can't be arsed and partially because I'm currently j
 
 I intend to have a set of Makefiles available, for compiling and testing smaller components, and then the big daddy Makefile that compiles the whole lot. This latter file probably won't exist until at least after pre-alpha.
 
+Currently, one may run the maptests by using `cd` to navigate to `game/environment/map`, and then running `gcc -o maptest map.c tile.c`, followed by `./maptest`. All it will do is spew out some numbers and show you some partially/fully generated maps, but hey, that's pretty, right?
+
 Design
 ======
 
