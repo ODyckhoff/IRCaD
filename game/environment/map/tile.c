@@ -38,7 +38,7 @@ void set_id(tile_t *tile, int id) {
 }
 
 void set_desc(tile_t *tile, char *desc) {
-
+    /* Set the description property of a tile */
     tile->desc = desc;
 }
 
@@ -57,13 +57,12 @@ char* get_name(tile_t* tile) {
 }
 
 int get_id(tile_t* tile) {
-
+    /* return the ID of a given tile */
     return tile->id;
 }
 
 void link_sub_map(tile_t *tile, int maptype, int width, int length) {
     /* Link a tile to a relevant sub map */
-
     tile->sub_map = new_map(maptype, width, length);
 }
 
