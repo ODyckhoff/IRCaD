@@ -2,6 +2,7 @@
 #include "map.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 char* maptype_names[] = {"NULL", "World Map", "Town Map", "Cave Map"};
 
@@ -61,7 +62,8 @@ void print_map(map_t *map) {
     for(j = 0; j < map->length; j++) {
 
         for(i = 0; i < map->width; i++) {
-            printf("[%d,%d]", map->grid[i][j]->x, map->grid[i][j]->y);
+            /* printf("[%d,%d]", map->grid[i][j]->x, map->grid[i][j]->y); */
+            printf("[%02d]", get_id(map->grid[i][j]));
         }
         printf("\n");
     }
@@ -91,9 +93,104 @@ void town_gen(map_t *map) {
         exit(1);
     }
 
+    int features[] = {PARK, SHRINE, OUTDOORCAFE, PLAZA};
+
     int width_m = (map->width - 1)/2;
     int length_m = (map->length - 1)/2;
 
+    /* Centre Tile becomes the Guild Hall */
+    tile_t *tile_ptr = map->grid[width_m][length_m];
+    set_id(tile_ptr, GUILDHALL);
+    set_desc(tile_ptr, "The Guild Hall is the hub of the town's operations");
+
+    /* Town Gates */
+    tile_ptr = map->grid[2][0];
+    set_id(tile_ptr, TOWNGATEINT);
+    set_desc(tile_ptr, "North Gate");
+
+    tile_ptr = map->grid[4][2];
+    set_id(tile_ptr, TOWNGATEINT);
+    set_desc(tile_ptr, "East Gate");
+
+    tile_ptr = map->grid[2][4];
+    set_id(tile_ptr, TOWNGATEINT);
+    set_desc(tile_ptr, "South Gate");
+
+    tile_ptr = map->grid[0][2];
+    set_id(tile_ptr, TOWNGATEINT);
+    set_desc(tile_ptr, "West Gate");
+
+    /* Buildings */
+        /* Corner Buildings */
+    tile_ptr = map->grid[0][0];
+    set_id(tile_ptr, BREWGARDEN);
+
+    tile_ptr = map->grid[0][4];
+    set_id(tile_ptr, WORKSHOP);
+
+    tile_ptr = map->grid[4][0];
+    set_id(tile_ptr, ALCHLAB);
+
+    tile_ptr = map->grid[4][4];
+    set_id(tile_ptr, BLACKMARKET);
+
+        /* North and South edges */
+    tile_ptr = map->grid[1][0];
+    set_id(tile_ptr, FARMERMARKET);
+
+    tile_ptr = map->grid[1][4];
+    set_id(tile_ptr, WARMOURSHOP);
+
+    tile_ptr = map->grid[3][0];
+    set_id(tile_ptr, POTIONSHOP);
+
+    tile_ptr = map->grid[3][4];
+    set_id(tile_ptr, ABANDONHOUSE);
+
+        /* NPC Houses */
+    tile_ptr = map->grid[0][1];
+    set_id(tile_ptr, NPCHOUSE);
+    set_desc(tile_ptr, "North-West House");
+
+    tile_ptr = map->grid[4][1];
+    set_id(tile_ptr, NPCHOUSE);
+    set_desc(tile_ptr, "North-East House");
+
+    tile_ptr = map->grid[0][3];
+    set_id(tile_ptr, NPCHOUSE);
+    set_desc(tile_ptr, "South-West House");
+
+    tile_ptr = map->grid[4][3];
+    set_id(tile_ptr, NPCHOUSE);
+    set_desc(tile_ptr, "South-East House");
+
+    /* Randomly Assign Park, Shrine, Cafe and Plaza tiles */
+    shuffle(features, sizeof(features)/sizeof(int));
+    
+    tile_ptr = map->grid[2][1];
+    set_id(tile_ptr, features[0]);
+
+    tile_ptr = map->grid[3][2];
+    set_id(tile_ptr, features[1]);
+
+    tile_ptr = map->grid[2][3];
+    set_id(tile_ptr, features[2]);
+
+    tile_ptr = map->grid[1][2];
+    set_id(tile_ptr, features[3]);
+
+    /* Set remaining squares to internal town tiles */
+    tile_ptr = map->grid[1][1];
+    set_id(tile_ptr, TOWNINT);
+
+    tile_ptr = map->grid[3][1];
+    set_id(tile_ptr, TOWNINT);
+
+    tile_ptr = map->grid[1][3];
+    set_id(tile_ptr, TOWNINT);
+
+    tile_ptr = map->grid[3][3];
+    set_id(tile_ptr, TOWNINT);
 }
 
 void cave_gen(map_t *map) {
@@ -103,6 +200,22 @@ void cave_gen(map_t *map) {
         exit(1);
     }
 
+}
+
+void shuffle(int *array, int n) {
+    srand((unsigned) time(NULL));
+
+    if (n > 1) 
+    {
+        size_t i;
+        for (i = 0; i < n; i++) 
+        {
+          size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
+          int t = array[j];
+          array[j] = array[i];
+          array[i] = t;
+        }
+    }
 }
 
 int main(int argc, char **argv) {
@@ -118,6 +231,8 @@ int main(int argc, char **argv) {
 
     printf("Testing town placement in world_gen\n");
     world_gen(map);
+    printf("Testing town generation in town_gen\n");
+    town_gen(map->grid[4][4]->sub_map);
 
     printf("Testing printing of map.\n");
     print_map(map);

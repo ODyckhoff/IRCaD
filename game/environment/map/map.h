@@ -23,4 +23,6 @@ void cave_gen(map_t *map);
 void print_map(map_t *map);
 char* get_map_name(int id);
 
+void shuffle(int *array, int n);
+
 #endif /* MAP_H */

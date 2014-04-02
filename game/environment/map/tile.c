@@ -37,6 +37,11 @@ void set_id(tile_t *tile, int id) {
     /* cave map init code here */
 }
 
+void set_desc(tile_t *tile, char *desc) {
+
+    tile->desc = desc;
+}
+
 char* get_name(tile_t* tile) {
     switch(tile->type) {
         case WORLDMAP:
@@ -49,6 +54,11 @@ char* get_name(tile_t* tile) {
             return cave_t_names[tile->id];
             break;
     }
+}
+
+int get_id(tile_t* tile) {
+
+    return tile->id;
 }
 
 void link_sub_map(tile_t *tile, int maptype, int width, int length) {
