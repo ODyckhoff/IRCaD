@@ -23,7 +23,7 @@ map_t* new_map(int mapid, int width, int length) {
         fprintf(stderr, "Error, could not allocate memory for map_t structure\n");
         exit(1); /* Exit codes to be defined for subsequent cycles */
     }
-
+    
     map->id = mapid;
     map->width = width;
     map->length = length;
@@ -76,13 +76,43 @@ void world_gen(map_t *map) {
         exit(1);
     }
 
+    tile_t *tile_ptr;
+    int i, j;
     int width_m = (map->width - 1)/2;
     int length_m = (map->length - 1)/2;
 
     /* Set centre tile_t structure to "town" type. Set tile sub_map to new town map. */
     tile_t *tile_m = map->grid[width_m][length_m];
     set_id(tile_m, TOWN);
-    print_tile(tile_m);
+    printf("Tile ID = %d; Sub Map is %s\n", tile_m->id, tile_m->sub_map != NULL ? "true" : "false");
+
+    /* Town Gates to be places N, E, S and W of Town. */
+    tile_ptr = map->grid[width_m][length_m - 1];
+    set_id(tile_ptr, TOWNGATEEXT);
+    set_desc(tile_ptr, "North Gate");
+
+    tile_ptr = map->grid[width_m + 1][length_m];
+    set_id(tile_ptr, TOWNGATEEXT);
+    set_desc(tile_ptr, "East Gate");
+
+    tile_ptr = map->grid[width_m][length_m + 1];
+    set_id(tile_ptr, TOWNGATEEXT);
+    set_desc(tile_ptr, "South Gate");
+
+    tile_ptr = map->grid[width_m - 1][length_m];
+    set_id(tile_ptr, TOWNGATEEXT);
+    set_desc(tile_ptr, "West Gate");
+
+    /* Farmland tiles radius 2 blocks from the Town, not replacing gates. */
+    for(j = length_m - 2; j <= length_m + 2; j++) {
+        for(i = width_m - 2; i <= width_m + 2; i++) {
+            tile_ptr = map->grid[i][j];
+            if(! tile_ptr->id) {
+                if(! ((j == length_m - 2 || j == length_m + 2) && (i == width_m - 2 || i == width_m + 2)))
+                    set_id(tile_ptr, FARMLAND);
+            }
+        }
+    }
 
 }
 
@@ -92,12 +122,11 @@ void town_gen(map_t *map) {
         fprintf(stderr, "Error, provided map for world generation is not a TOWNMAP type\n");
         exit(1);
     }
-
     int features[] = {PARK, SHRINE, OUTDOORCAFE, PLAZA};
 
     int width_m = (map->width - 1)/2;
     int length_m = (map->length - 1)/2;
-
+    
     /* Centre Tile becomes the Guild Hall */
     tile_t *tile_ptr = map->grid[width_m][length_m];
     set_id(tile_ptr, GUILDHALL);
@@ -222,7 +251,7 @@ int main(int argc, char **argv) {
 /* Main function only for purposes of map testing. TO BE REMOVED IN SUBSEQUENT CYCLES. */
 
     printf("Generating Map.\n");
-    map_t *map = new_map(WORLDMAP, 8, 8);
+    map_t *map = new_map(WORLDMAP, 20, 20);
 
     if(map == NULL)
         printf("Map generation failed.\n");
@@ -232,16 +261,16 @@ int main(int argc, char **argv) {
     printf("Testing town placement in world_gen\n");
     world_gen(map);
     printf("Testing town generation in town_gen\n");
-    town_gen(map->grid[4][4]->sub_map);
+    town_gen(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
 
     printf("Testing printing of map.\n");
     print_map(map);
 
     printf("Testing printing of town map\n");
-    if(map->grid[4][4]->sub_map == NULL)
+    if(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map == NULL)
         fprintf(stderr, "Error, no Town Map linked\n");
     else
-        print_map(map->grid[4][4]->sub_map);
+        print_map(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
 
     return 0;
 }
