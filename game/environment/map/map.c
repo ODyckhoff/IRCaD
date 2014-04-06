@@ -1,10 +1,12 @@
 /* map.c - generates a map structure with a grid full of pointers to tile structures and provides other map functions */
+#include "colour.h"
 #include "map.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 char* maptype_names[] = {"NULL", "World Map", "Town Map", "Cave Map"};
+char* colours[] = { KNRM, KRED, KGRN, KYEL, KBLU, KMAG, KCYN, KWHT };
 
 map_t* new_map(int mapid, int width, int length) {
 
@@ -57,13 +59,21 @@ char* get_map_name(int id) {
 
 void print_map(map_t *map) {
 /* This function will remain as it may be of use for web interface. */
-    int i, j;
+    int i, j, id, tmp;
+    char* colour;
 
     for(j = 0; j < map->length; j++) {
 
         for(i = 0; i < map->width; i++) {
-            /* printf("[%d,%d]", map->grid[i][j]->x, map->grid[i][j]->y); */
-            printf("[%02d]", get_id(map->grid[i][j]));
+            id = get_id(map->grid[i][j]);
+            tmp = id;
+
+            while(tmp > 7) {
+                tmp -= 7; /* Make sure we don't go outside bounds of array. */
+            }
+
+            colour = colours[tmp];
+            printf("[%s%02d%s]", colour, id, KNRM);
         }
         printf("\n");
     }
