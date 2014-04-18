@@ -17,12 +17,8 @@ typedef struct map_t {
 } map_t;
 
 map_t* new_map(int id, int width, int length);
-void world_gen(map_t *map);
-void town_gen(map_t *map);
-void cave_gen(map_t *map);
 void print_map(map_t *map);
 char* get_map_name(int id);
 
-void shuffle(int *array, int n);
 
 #endif /* MAP_H */
