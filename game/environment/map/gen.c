@@ -43,8 +43,21 @@ void world_gen(map_t *map) {
         for(i = width_m - 2; i <= width_m + 2; i++) {
             tile_ptr = map->grid[i][j];
             if(! tile_ptr->id) {
-                if(! ((j == length_m - 2 || j == length_m + 2) && (i == width_m - 2 || i == width_m + 2)))
+                if(! ((j == length_m - 2 || j == length_m + 2) && (i == width_m - 2 || i == width_m + 2))) {
                     set_id(tile_ptr, FARMLAND);
+                }
+            }
+        }
+    }
+
+    /* Grassland around the farmland */
+    for(j = length_m - 3; j <= length_m + 3; j++) {
+        for(i = width_m - 3; i <= width_m + 3; i++) {
+            tile_ptr = map->grid[i][j];
+            if(! tile_ptr->id) {
+                if(! ((j == length_m - 3 || j == length_m + 3) && (i == width_m - 3 || i == width_m + 3))) {
+                    set_id(tile_ptr, GRASSLAND);
+                }
             }
         }
     }

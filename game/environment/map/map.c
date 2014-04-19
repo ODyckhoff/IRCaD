@@ -6,7 +6,7 @@
 #include <time.h>
 
 char* maptype_names[] = {"NULL", "World Map", "Town Map", "Cave Map"};
-char* colours[] = { KNRM, KRED, KGRN, KYEL, KBLU, KMAG, KCYN, KWHT };
+char* colours[] = { KNRM, KRED, KGRN, KYEL, KBLU, KMAG, KCYN };
 
 map_t* new_map(int mapid, int width, int length) {
 
@@ -68,8 +68,8 @@ void print_map(map_t *map) {
             id = get_id(map->grid[i][j]);
             tmp = id;
 
-            while(tmp > 7) {
-                tmp -= 7; /* Make sure we don't go outside bounds of array. */
+            while(tmp > 6) {
+                tmp -= 6; /* Make sure we don't go outside bounds of array. */
             }
 
             colour = colours[tmp];

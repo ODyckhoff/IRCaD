@@ -24,20 +24,19 @@ typedef enum {
 } town_t;
 
 typedef enum {
-    TOWN         = 1,
-    TOWNGATEEXT  = 2,
-    FARMLAND     = 3,
-    MOUNTAINCAVE = 4,
-    MOUNTAIN     = 5,
-    LAIR         = 6,
-    GRASSLAND    = 7,
-    SHRUBLAND    = 8,
-    FOREST       = 9,
-    SWAMP        = 10,
-    TUNDRA       = 11,
-    DEEPFOREST   = 12,
-    TAIGA        = 13,
-    CAVE         = 14,
+    FARMLAND     = 1,
+    GRASSLAND    = 2,
+    SHRUBLAND    = 3,
+    FOREST       = 4,
+    SWAMP        = 5,
+    TUNDRA       = 6,
+    DEEPFOREST   = 7,
+    TAIGA        = 8,
+    MOUNTAINCAVE = 9,
+    LAIR         = 10,
+    TOWN         = 11,
+    TOWNGATEEXT  = 12,
+    MOUNTAIN     = 13,
 } world_t;
 
 typedef enum { /* Global BLANK defines edges of cave to simulate shape. */
