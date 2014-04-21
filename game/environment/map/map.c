@@ -36,7 +36,7 @@ map_t* new_map(int mapid, int width, int length) {
     }
 
     /* Fill the grid with blank tiles - PRE-ALPHA STAGE ONLY; SUBSEQUENT SOFTWARE CYCLES WILL POPULATE INTELLIGENTLY */
-    for(i = 0; i <= width; i++) {
+    for(i = 0; i < width; i++) {
         map->grid[i] = (tile_t**) malloc(length * sizeof(tile_t *)); /* Allocate memory per row for 2nd dimension */
         if(map->grid[i] == NULL) {
             fprintf(stderr, "Error, could not allocate memory for map_t->grid[%d]\n", i);
@@ -45,7 +45,7 @@ map_t* new_map(int mapid, int width, int length) {
         
         /* In subsequent software cycles, this inner loop should be removed and `calloc` should be used above to zero-initialise pointers. */
         /* Map population will be be handled in a separate function in this file. */
-        for(j = 0; j <= length; j++) {
+        for(j = 0; j < length; j++) {
             map->grid[i][j] = new_tile(mapid, i, j);
         }
     }
@@ -62,6 +62,8 @@ void print_map(map_t *map) {
     int i, j, id, tmp;
     char* colour;
 
+    /* printf("\033[2J"); */ /*clear screen*/
+    /* printf("\033[1;1H"); */ /*put at upper left*/
     for(j = 0; j < map->length; j++) {
 
         for(i = 0; i < map->width; i++) {
@@ -76,5 +78,20 @@ void print_map(map_t *map) {
             printf("[%s%02d%s]", colour, id, KNRM);
         }
         printf("\n");
+    }
+    printf("\n");
+}
+
+int chk_map(map_t* map, tile_t* tile, int xmod, int ymod) {
+    if(
+        (tile->x + xmod < map->width)  &&
+        (tile->x + xmod >= 0)          &&
+        (tile->y + ymod < map->length) &&
+        (tile->y + ymod >= 0)
+    ) {
+        return 1;
+    }
+    else {
+        return 0;
     }
 }

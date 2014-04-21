@@ -10,27 +10,42 @@
 int main(int argc, char **argv) {
 /* Main function only for purposes of map testing. TO BE REMOVED IN SUBSEQUENT CYCLES. */
 
+    srand((unsigned) time(NULL)); /* seed for the entire program */
+
     printf("Generating Map.\n");
-    map_t *map = new_map(WORLDMAP, 20, 20);
+    map_t *map = new_map(WORLDMAP, 50, 50);    
 
     if(map == NULL)
         printf("Map generation failed.\n");
     else
         printf("Hurray, we have a map! Generation succeeded.\n");
 
-    printf("Testing town placement in world_gen\n");
+    printf("Testing world generation in world_gen\n");
+    long double cstart = (long double)clock();
     world_gen(map);
+    long double cend = (long double)clock();
+    long double cdiff = cend - cstart;
+
+    long double tstart = cstart/CLOCKS_PER_SEC;
+    long double tend = cend/CLOCKS_PER_SEC;
+    long double tdiff = (long double)difftime(tstart, tend);
+
+    printf("Generation complete in:\n\t%Lf CPU Clocks\n\t%Lf seconds\n", cdiff, tdiff);
+    
     printf("Testing town generation in town_gen\n");
     town_gen(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
 
-    printf("Testing printing of map.\n");
-    print_map(map);
+     print_map(map);
 
-    printf("Testing printing of town map\n");
     if(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map == NULL)
         fprintf(stderr, "Error, no Town Map linked\n");
     else
         print_map(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
+
+
+    /* test "spawn next to" rules */
+/*    int x = atoi(argv[1]);
+    printf("%d will spawn next to %d\n", snt(x), x);*/
 
     return 0;
 }

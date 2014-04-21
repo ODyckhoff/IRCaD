@@ -22,6 +22,7 @@ void world_gen(map_t *map) {
     /* Set centre tile_t structure to "town" type. Set tile sub_map to new town map. */
     tile_t *tile_m = map->grid[width_m][length_m];
     set_id(tile_m, TOWN);
+    printf("Tile ID = %d; Sub Map is %s\n", tile_m->id, tile_m->sub_map != NULL ? "true" : "false");
 
     /* Town Gates to be places N, E, S and W of Town. */
     tile_ptr = map->grid[width_m][length_m - 1];
@@ -82,115 +83,121 @@ void world_gen(map_t *map) {
     do {
         switch(dir) {
             case 0:
-                while(chk_map(map, tile_ptr, 1, 1) && map->grid[tile_ptr->x + 1][tile_ptr->y + 1]->id) {
+                //printf("Beginning of case 0: All is well so far\n");
+                while(chk_map(map, map->grid[tile_ptr->x + 1][tile_ptr->y + 1]) && map->grid[tile_ptr->x + 1][tile_ptr->y + 1]->id) {
                 /* Whilst the South-East tile is occupied: */
                     tile_ptr = map->grid[tile_ptr->x + 1][tile_ptr->y]; /* Set pointer to East tile. */
                     if(tile_ptr->id) {
-                        if(chk_map(map, tile_ptr, 0, -1)) {
+                        if(chk_map(map, map->grid[tile_ptr->x][tile_ptr->y - 1])) {
                             tile_ptr = map->grid[tile_ptr->x][tile_ptr->y - 1]; /* If id is set, set pointer to North tile. */
                         }
                         else {
                             do {
-                                if(tile_ptr->x + 1 < map->width)
-                                    tile_ptr = map->grid[tile_ptr->x + 1][tile_ptr->y];
+                                tile_ptr = map->grid[tile_ptr->x + 1][tile_ptr->y];
                             }
                             while(tile_ptr->id);
                         }
                     }
                     set_id(tile_ptr, snt(map->grid[tile_ptr->x][tile_ptr->y + 1]->id));
+                            printf("x is %d and y is %d\n", tile_ptr->x, tile_ptr->y);
                 }
 
                 dir = 1;
                 
-                if(chk_map(map, tile_ptr, 1, 0))
+                /* if(chk_map(map->grid[tile_ptr->x + 1][tile_ptr->y])) { */
                     tile_ptr = map->grid[tile_ptr->x + 1][tile_ptr->y];
+                /* else {
+                    do {
+                        tile_ptr = map->grid[tile_ptr->x][tile_ptr->y];
+                        dir = 0; */
+                //printf("end of case 0: A-OK\n");
+                print_map(map);
             break;
 
             case 1:
-                while(chk_map(map, tile_ptr, -1, 1) && map->grid[tile_ptr->x - 1][tile_ptr->y + 1]->id) {
+                //printf("Beginning of case 1: All is well so far\n");
+                while(chk_map(map, map->grid[tile_ptr->x - 1][tile_ptr->y + 1]) && map->grid[tile_ptr->x - 1][tile_ptr->y + 1]->id) {
+                //printf("BEGIN WHILE\n");
                 /* Whilst the South-West tile is occupied: */
-                    tile_ptr = map->grid[tile_ptr->x][tile_ptr->y + 1]; /* Set pointer to South tile. */
+                    if(chk_map(map, map->grid[tile_ptr->x][tile_ptr->y + 1]))
+                        tile_ptr = map->grid[tile_ptr->x][tile_ptr->y + 1]; /* Set pointer to South tile. */
                     if(tile_ptr->id) {
-                        if(chk_map(map, tile_ptr, 1, 0)) {
+                        //printf("Tile has an ID\n");
+                        if(chk_map(map, map->grid[tile_ptr->x + 1][tile_ptr->y])) {
+                            //printf("This tile pointer is valid\n");
                             tile_ptr = map->grid[tile_ptr->x + 1][tile_ptr->y]; /* If id is set, set pointer to East tile. */
                         }
                         else {
+                            //printf("this tile pointer is invalid\n");
                             do {
-                                if(tile_ptr->y + 1 < map->length)
-                                    tile_ptr = map->grid[tile_ptr->x][tile_ptr->y + 1];
+                                tile_ptr = map->grid[tile_ptr->x][tile_ptr->y + 1];
+                                //printf("added 1 to y\n");
                             }
                             while(tile_ptr->id);
                         }
                     }
                     set_id(tile_ptr, snt(map->grid[tile_ptr->x - 1][tile_ptr->y]->id));
+                            printf("x is %d and y is %d\n", tile_ptr->x, tile_ptr->y);
                 }
 
                 dir = 2;
-
-                if(chk_map(map, tile_ptr, 0, 1))
-                    tile_ptr = map->grid[tile_ptr->x][tile_ptr->y + 1];
+                tile_ptr = map->grid[tile_ptr->x][tile_ptr->y + 1];
+                //printf("end of case 1: A-OK\n");
+                print_map(map);
             break;
 
             case 2:
-                while(chk_map(map, tile_ptr, -1, -1) && map->grid[tile_ptr->x - 1][tile_ptr->y - 1]->id) {
+                printf("Beginning of case 2: All is well so far\n");
+                while(chk_map(map, map->grid[tile_ptr->x - 1][tile_ptr->y - 1]) && map->grid[tile_ptr->x - 1][tile_ptr->y - 1]->id) {
                 /* Whilst the North-West tile is occupied: */
                     tile_ptr = map->grid[tile_ptr->x - 1][tile_ptr->y]; /* Set pointer to West tile. */
                     if(tile_ptr->id) {
-                        if(chk_map(map, tile_ptr, 0, 1)) {
+                        if(chk_map(map, map->grid[tile_ptr->x][tile_ptr->y + 1])) {
                             tile_ptr = map->grid[tile_ptr->x][tile_ptr->y + 1]; /* If id is set, set pointer to South tile. */
                         }
                         else {
                             do {
-                                if(tile_ptr->x - 1 >= 0)
-                                    tile_ptr = map->grid[tile_ptr->x - 1][tile_ptr->y];
+                                tile_ptr = map->grid[tile_ptr->x - 1][tile_ptr->y];
                             }
                             while(tile_ptr->id);
                         }
                     }
                     set_id(tile_ptr, snt(map->grid[tile_ptr->x][tile_ptr->y - 1]->id));
+                            printf("x is %d and y is %d\n", tile_ptr->x, tile_ptr->y);
                 }
 
                 dir = 3;
-
-                if(chk_map(map, tile_ptr, -1, 0))
-                    tile_ptr = map->grid[tile_ptr->x - 1][tile_ptr->y];
+                tile_ptr = map->grid[tile_ptr->x - 1][tile_ptr->y];
+                printf("end of case 2: A-OK\n");
+                print_map(map);
             break;
 
             case 3:
-                while(chk_map(map, tile_ptr, 1, -1) && map->grid[tile_ptr->x + 1][tile_ptr->y - 1]->id) {
+                printf("Beginning of case 3: All is well so far\n");
+                while(chk_map(map, map->grid[tile_ptr->x + 1][tile_ptr->y - 1]) && map->grid[tile_ptr->x + 1][tile_ptr->y - 1]->id) {
                 /* Whilst the North-East tile is occupied: */
                     tile_ptr = map->grid[tile_ptr->x][tile_ptr->y - 1]; /* Set pointer to North tile. */
                     if(tile_ptr->id) {
-                        if(chk_map(map, tile_ptr, -1, 0)) {
+                        if(chk_map(map, map->grid[tile_ptr->x - 1][tile_ptr->y])) {
                             tile_ptr = map->grid[tile_ptr->x - 1][tile_ptr->y]; /* If id is set, set pointer to West tile. */
                         }
                         else {
                             do {
-                                if(tile_ptr->y - 1 >= 0)
-                                    tile_ptr = map->grid[tile_ptr->x][tile_ptr->y - 1];
+                                tile_ptr = map->grid[tile_ptr->x][tile_ptr->y - 1];
                             }
                             while(tile_ptr->id);
                         }
                     }
                     set_id(tile_ptr, snt(map->grid[tile_ptr->x + 1][tile_ptr->y]->id));
+                            printf("x is %d and y is %d\n", tile_ptr->x, tile_ptr->y);
                 }
 
+                print_map(map);
                 dir = 0;
-
-                if(chk_map(map, tile_ptr, 0, -1))
-                    tile_ptr = map->grid[tile_ptr->x][tile_ptr->y - 1];
+                tile_ptr = map->grid[tile_ptr->x][tile_ptr->y - 1];
+                printf("end of case 3: A-OK\n");
             break;
         }
-
-        if(
-            (map->grid[0][0]->id)               && 
-            (map->grid[0][map->length - 1]->id) && 
-            (map->grid[map->width - 1][0]->id)  &&
-            (map->grid[map->width - 1][map->length - 1]->id)
-        ) {
-            stop = 1;
-        }
-
     } while(!stop);
 }
 
@@ -332,10 +339,10 @@ int snt(int id) {
         int id;
     } p;
 
-    p gr[3] = {{0.4, GRASSLAND}, {0.4, SHRUBLAND}, {0.2, FOREST}};
-    p sh[4] = {{0.3, SHRUBLAND}, {0.2, GRASSLAND}, {0.3, FOREST}, {0.2, SWAMP}};
-    p fo[5] = {{0.4, FOREST}, {0.1, SHRUBLAND}, {0.2, DEEPFOREST}, {0.1, TAIGA}, {0.2, TUNDRA}};
-    p sw[5] = {{0.3, SWAMP}, {0.2, SHRUBLAND}, {0.2, TUNDRA}, {0.2, TAIGA}, {0.1, FOREST}};
+    p gr[3] = {{0.5, GRASSLAND}, {0.4, SHRUBLAND}, {0.1, FOREST}};
+    p sh[5] = {{0.3, SHRUBLAND}, {0.2, GRASSLAND}, {0.2, FOREST}, {0.2, SWAMP}, {0.1, TUNDRA}};
+    p fo[6] = {{0.4, FOREST}, {0.1, SHRUBLAND}, {0.2, DEEPFOREST}, {0.1, GRASSLAND}, {0.1, TAIGA}, {0.1, TUNDRA}};
+    p sw[4] = {{0.4, SWAMP}, {0.4, SHRUBLAND}, {0.1, TUNDRA}, {0.1, TAIGA}};
     p tu[5] = {{0.3, TUNDRA}, {0.3, TAIGA}, {0.2, FOREST}, {0.1, SHRUBLAND}, {0.1, SWAMP}};
     p df[2] = {{0.5, DEEPFOREST}, {0.5, FOREST}};
     p ta[4] = {{0.4, TAIGA}, {0.3, TUNDRA}, {0.2, FOREST}, {0.1, SWAMP}};
