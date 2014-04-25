@@ -2,6 +2,7 @@
 #include "map.h"
 #include "tile.h"
 #include "gen.h"
+#include "exits.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -42,6 +43,27 @@ int main(int argc, char **argv) {
     else
         print_map(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
 
+    printf("Testing exits code\n");
+    char *str = exitstr(15);
+    printf("exit string = %s\n", str);
+    if(isvalid(5, 5))
+        printf("valid exits\n");
+
+    if(isvalid(4, 6))
+        printf("invalid exits\n");
+    
+    printf("Testing tile printing\n");
+    /* four corners */
+    print_tile(map->grid[0][0]);
+    print_tile(map->grid[0][map->length - 1]);
+    print_tile(map->grid[map->width - 1][map->length - 1]);
+    print_tile(map->grid[map->width - 1][0]);
+
+    /* pick an edge tile, any tile */
+    print_tile(map->grid[0][(map->length - 1)/2]);
+    print_tile(map->grid[(map->width - 1)/2][map->length - 1]);
+    print_tile(map->grid[map->width - 1][(map->length - 1)/2]);
+    print_tile(map->grid[(map->width - 1)/2][0]);
 
     /* test "spawn next to" rules */
 /*    int x = atoi(argv[1]);

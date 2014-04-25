@@ -53,10 +53,12 @@ typedef struct tile_t {
     char* desc;
     int x;
     int y;
+    int exits; /* Binary 1111 - indicates all four exits are available */
     struct map_t *sub_map;
+    struct map_t *parent;
 } tile_t;
 
-tile_t* new_tile(int maptype, int x, int y);
+tile_t* new_tile(int maptype, int x, int y, struct map_t *parent);
 void print_tile(tile_t *cur_tile);
 
 void set_id(tile_t *tile, int id);
@@ -65,6 +67,12 @@ void set_desc(tile_t *tile, char *desc);
 int get_id(tile_t *tile);
 char* get_desc(tile_t *tile);
 char* get_name(tile_t *tile);
+struct map_t* get_parent(tile_t *tile);
+
+tile_t* get_n(tile_t *tile);
+tile_t* get_e(tile_t *tile);
+tile_t* get_s(tile_t *tile);
+tile_t* get_w(tile_t *tile);
 
 void link_sub_map(tile_t *tile, int maptype, int width, int length);
 

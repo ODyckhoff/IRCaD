@@ -1,6 +1,9 @@
 /* map.c - generates a map structure with a grid full of pointers to tile structures and provides other map functions */
+
 #include "colour.h"
 #include "map.h"
+#include "exits.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -46,7 +49,24 @@ map_t* new_map(int mapid, int width, int length) {
         /* In subsequent software cycles, this inner loop should be removed and `calloc` should be used above to zero-initialise pointers. */
         /* Map population will be be handled in a separate function in this file. */
         for(j = 0; j < length; j++) {
-            map->grid[i][j] = new_tile(mapid, i, j);
+            map->grid[i][j] = new_tile(mapid, i, j, map);
+
+            tile_t* tile = map->grid[i][j];
+            
+            /* Exits code to remove exits from edges */
+            if(i == 0) {
+                rmexit(tile, WEST & EAST & SOUTH & NORTH);
+            }
+            else if(i == width - 1) {
+                rmexit(tile, EAST);
+            }
+
+            if(j == 0) {
+                rmexit(tile, NORTH);
+            }
+            else if(j == length - 1) {
+                rmexit(tile, SOUTH);
+            }
         }
     }
 

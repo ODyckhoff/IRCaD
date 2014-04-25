@@ -1,14 +1,21 @@
-/* Utils file to provide common utilities not tied specifically to any aspect of the software */
+/* Utils file to provide common utilities not tied specifically to any aspect of the software */ 
 
-#include "utils.h"
+#include "printutil.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 
-void mprintf(const char * format, ...) {
+char* mprintf(const char * format, ...) {
 /* Prints a statement containing a format and then multiple arguments. */
-  va_list args;
-  va_start (args, format);
-  vprintf (format, args);
-  va_end (args);
+
+    char *buf;
+    va_list args;
+
+    va_start (args, format);
+    buf = malloc(sizeof(format) + sizeof(args));
+    vsprintf (buf, format, args);
+    va_end (args);
+
+    return buf;
 }
