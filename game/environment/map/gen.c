@@ -1,5 +1,6 @@
 /* gen.c - takes a map structure and handles generation of terrain */
 #include "gen.h"
+#include "exits.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -214,62 +215,82 @@ void town_gen(map_t *map) {
     tile_ptr = map->grid[2][0];
     set_id(tile_ptr, TOWNGATEINT);
     set_desc(tile_ptr, "North Gate");
+    rmexit(tile_ptr, EAST | WEST);
+    mkexit(tile_ptr, NORTH);
 
     tile_ptr = map->grid[4][2];
     set_id(tile_ptr, TOWNGATEINT);
     set_desc(tile_ptr, "East Gate");
+    rmexit(tile_ptr, NORTH | SOUTH);
+    mkexit(tile_ptr, EAST);
 
     tile_ptr = map->grid[2][4];
     set_id(tile_ptr, TOWNGATEINT);
     set_desc(tile_ptr, "South Gate");
+    rmexit(tile_ptr, EAST | WEST);
+    mkexit(tile_ptr, SOUTH);
 
     tile_ptr = map->grid[0][2];
     set_id(tile_ptr, TOWNGATEINT);
     set_desc(tile_ptr, "West Gate");
+    rmexit(tile_ptr, NORTH | SOUTH);
+    mkexit(tile_ptr, WEST);
 
     /* Buildings */
         /* Corner Buildings */
     tile_ptr = map->grid[0][0];
     set_id(tile_ptr, BREWGARDEN);
+    rmexit(tile_ptr, SOUTH);
 
     tile_ptr = map->grid[0][4];
     set_id(tile_ptr, WORKSHOP);
+    rmexit(tile_ptr, NORTH);
 
     tile_ptr = map->grid[4][0];
     set_id(tile_ptr, ALCHLAB);
+    rmexit(tile_ptr, SOUTH);
 
     tile_ptr = map->grid[4][4];
     set_id(tile_ptr, BLACKMARKET);
+    rmexit(tile_ptr, NORTH);
 
         /* North and South edges */
     tile_ptr = map->grid[1][0];
     set_id(tile_ptr, FARMERMARKET);
+    rmexit(tile_ptr, EAST);
 
     tile_ptr = map->grid[1][4];
     set_id(tile_ptr, WARMOURSHOP);
+    rmexit(tile_ptr, EAST);
 
     tile_ptr = map->grid[3][0];
     set_id(tile_ptr, POTIONSHOP);
+    rmexit(tile_ptr, WEST);
 
     tile_ptr = map->grid[3][4];
     set_id(tile_ptr, ABANDONHOUSE);
+    rmexit(tile_ptr, WEST);
 
         /* NPC Houses */
     tile_ptr = map->grid[0][1];
     set_id(tile_ptr, NPCHOUSE);
     set_desc(tile_ptr, "North-West House");
+    rmexit(tile_ptr, NORTH | SOUTH);
 
     tile_ptr = map->grid[4][1];
     set_id(tile_ptr, NPCHOUSE);
     set_desc(tile_ptr, "North-East House");
+    rmexit(tile_ptr, NORTH | SOUTH);
 
     tile_ptr = map->grid[0][3];
     set_id(tile_ptr, NPCHOUSE);
     set_desc(tile_ptr, "South-West House");
+    rmexit(tile_ptr, NORTH | SOUTH);
 
     tile_ptr = map->grid[4][3];
     set_id(tile_ptr, NPCHOUSE);
     set_desc(tile_ptr, "South-East House");
+    rmexit(tile_ptr, NORTH | SOUTH);
 
     /* Randomly Assign Park, Shrine, Cafe and Plaza tiles */
     shuffle(features, sizeof(features)/sizeof(int));
@@ -303,7 +324,7 @@ void town_gen(map_t *map) {
 void cave_gen(map_t *map) {
 /* This function will generate a cave map */
     if(map->id != CAVEMAP) {
-        fprintf(stderr, "Error, provided map for world generation is not a WORLDMAP type\n");
+        fprintf(stderr, "Error, provided map for world generation is not a CAVEMAP type\n");
         exit(1);
     }
 

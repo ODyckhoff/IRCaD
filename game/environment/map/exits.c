@@ -66,6 +66,13 @@ void rmexit(tile_t *tile, int dir) {
     tile->exits -= dir;
 }
 
+void mkexit(tile_t *tile, int dir) {
+/* Adds an exit to a tile */
+
+    tile->exits |= dir;
+
+}
+
 int getexits(tile_t *tile) {
 /* returns an integer representing the tile exits */
 

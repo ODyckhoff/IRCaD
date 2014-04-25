@@ -13,6 +13,7 @@ enum {
 char* exitstr(int exits);
 int isvalid( int exits, char dir);
 void rmexit(tile_t *tile, int dir);
+void mkexit(tile_t *tile, int dir);
 int getexits(tile_t *tile);
 
 #endif /* EXITS_H */

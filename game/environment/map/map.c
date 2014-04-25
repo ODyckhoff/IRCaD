@@ -55,7 +55,7 @@ map_t* new_map(int mapid, int width, int length) {
             
             /* Exits code to remove exits from edges */
             if(i == 0) {
-                rmexit(tile, WEST & EAST & SOUTH & NORTH);
+                rmexit(tile, WEST);
             }
             else if(i == width - 1) {
                 rmexit(tile, EAST);

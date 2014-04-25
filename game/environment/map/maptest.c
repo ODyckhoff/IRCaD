@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
     srand((unsigned) time(NULL)); /* seed for the entire program */
 
     printf("Generating Map.\n");
-    map_t *map = new_map(WORLDMAP, 50, 50);    
+    map_t *map = new_map(WORLDMAP, 20, 20);    
 
     if(map == NULL)
         printf("Map generation failed.\n");
@@ -64,6 +64,9 @@ int main(int argc, char **argv) {
     print_tile(map->grid[(map->width - 1)/2][map->length - 1]);
     print_tile(map->grid[map->width - 1][(map->length - 1)/2]);
     print_tile(map->grid[(map->width - 1)/2][0]);
+
+    map = map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map;
+    print_tile(map->grid[0][3]);
 
     /* test "spawn next to" rules */
 /*    int x = atoi(argv[1]);
