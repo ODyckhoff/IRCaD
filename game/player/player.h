@@ -7,3 +7,5 @@ typedef struct {
     
 
 } player_t;
+
+#endif /* PLAYER_H */
