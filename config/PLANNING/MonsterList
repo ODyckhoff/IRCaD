@@ -12,6 +12,8 @@ Name|Type|str,int|group|Habitat|allignment
 Rat|beast|str|1|farmland|neutral
 Cow|beast|str|1|farmland|neutral
 Chicken|beast|str|1|farmland|neutral
+Pig|beast|str|1|farmland|neutral
+Sheep|beast|str|farmland|neutral
 
 
 Rabbit|beast|str|2|grassland|neutral
