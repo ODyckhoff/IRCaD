@@ -23,6 +23,7 @@ void world_gen(map_t *map) {
     /* Set centre tile_t structure to "town" type. Set tile sub_map to new town map. */
     tile_t *tile_m = map->grid[width_m][length_m];
     set_id(tile_m, TOWN);
+    map->signif = tile_m;
 
     /* Town Gates to be places N, E, S and W of Town. */
     tile_ptr = map->grid[width_m][length_m - 1];
@@ -210,6 +211,7 @@ void town_gen(map_t *map) {
     tile_t *tile_ptr = map->grid[width_m][length_m];
     set_id(tile_ptr, GUILDHALL);
     set_desc(tile_ptr, "The Guild Hall is the hub of the town's operations");
+    map->signif = tile_ptr;
 
     /* Town Gates */
     tile_ptr = map->grid[2][0];

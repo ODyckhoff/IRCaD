@@ -98,7 +98,7 @@ tile_t* get_s(tile_t* tile) {
     map_t* parent = get_parent(tile);
 
     if(chk_map(parent, tile, 0, 1))
-        tile->parent->grid[tile->x][tile->y + 1];
+        return tile->parent->grid[tile->x][tile->y + 1];
 }
 
 tile_t* get_w(tile_t* tile) {

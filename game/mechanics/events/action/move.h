@@ -5,8 +5,8 @@
 #include "../../environment/tile.h"
 #include "../../environment/map.h"
 
-struct map_t mapswitch(struct map_t *cur_map, int maptype);
-struct tile_t go(struct tile_t *cur_tile, int dir);
+void mapswitch(struct indiv_t *active, int maptype);
+void go(struct indiv_t *active, struct tile_t *cur_tile, int dir);
 
 
 #endif /* MOVE_H */
