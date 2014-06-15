@@ -2,6 +2,38 @@
 
 #include "move.h"
 
+void move_ev_init(move_ev *move) {
+    move->listener_count = 0;
+}
+
+void move_rmlist(void (*fp)(struct tile_t*, struct tile_t*)) {
+    int i;
+    move_ev *move = get_ev("move");
+
+    for(i = 0; i < move->listener_count; ++i) {
+        if(move->listener_list[i] == fp) {
+            move->listener_count--;
+            move->listener_list[move->listener_count];
+        }
+    }
+}
+
+void move_mklist(void (*fp)(struct tile_t*, struct tile_t*)) {
+    move_ev *move = get_ev("move");
+
+    move_rmlist(fp);
+    move->listener_list[move->listener_count++] = fp;
+}
+
+void move_exec(tile_t *oldpos, tile_t *newpos) {
+    move_ev *move = get_ev("move");
+    int i;
+
+    for(i = 0; i < move->listener_count; ++i) {
+        move->listener_list[i](oldpos, newpos);
+    }
+}
+
 void mapswitch(indiv_t *active, int maptype) {
 /* Switches a player into a designated map. */
 
