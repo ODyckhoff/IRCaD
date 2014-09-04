@@ -8,4 +8,6 @@ typedef struct {
 
 } player_t;
 
+player_t* new_player();
+
 #endif /* PLAYER_H */

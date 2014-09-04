@@ -6,7 +6,9 @@
 #include "handler.h"
 
 /* Invoke individual event type handlers. */
+event_t* new_event(char* type, char* category) {
 
+}
 
 
 /* Pass control to the event validator. */
