@@ -22,4 +22,9 @@ typedef struct {
     
 } character_t;
 
+struct character_t* new_char(int id, char* name, int race, int class);
+void set_curmap(struct character_t* character, struct map_t* map);
+void set_curpos_tile(struct character_t* character, struct tile_t* tile);
+void set_curpos_coord(struct character_t* character, int x, int y);
+
 #endif /* CHARACTER_H */
