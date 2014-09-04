@@ -3,7 +3,7 @@
 
 #include "character/character.h"
 
-typedef struct {
+typedef struct player_t {
     int account;
     int priv;
     int num_chars;

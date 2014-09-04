@@ -1,4 +1,5 @@
 /* player.c - creates and manages players. */
+#include <stdlib.h>
 
 #include "player.h"
 
@@ -18,9 +19,10 @@ void new_character(player_t* player, int id, char* name, int race, int class) {
     if(player->num_chars < 10) {
         character_t* character = new_char(id, name, race, class);
 
-        if(character_t == NULL)
-            return 0;
+        if(character == NULL)
+            return;
 
         player->charlist[player->num_chars] = character;
+        player->num_chars++;
     }
 }

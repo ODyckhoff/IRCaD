@@ -36,8 +36,11 @@ void set_id(tile_t *tile, int id) {
     tile->id = id;
 
     /* Check if the name is significant */
-    if(tile->type == WORLDMAP && tile->id == TOWN)
+    if(tile->type == WORLDMAP && tile->id == TOWN) {
         link_sub_map(tile, TOWNMAP, 5, 5); /* TODO: Optional town sizes */
+        tile->parent->town = tile->sub_map;
+    }
+        
 
     /* cave map init code here */
 }
