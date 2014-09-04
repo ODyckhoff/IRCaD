@@ -199,7 +199,7 @@ void world_gen(map_t *map) {
 void town_gen(map_t *map) {
 /* This function will generate a town map */
     if(map->id != TOWNMAP) {
-        fprintf(stderr, "Error, provided map for world generation is not a TOWNMAP type\n");
+        fprintf(stderr, "Error, provided map for town generation is not a TOWNMAP type\n");
         exit(1);
     }
     int features[] = {PARK, SHRINE, OUTDOORCAFE, PLAZA};

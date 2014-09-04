@@ -16,6 +16,7 @@ typedef struct map_t {
     struct tile_t ***grid;
     struct tile_t *signif;
     struct map_t *parent;
+    struct map_t *town;
 } map_t;
 
 map_t* new_map(int id, int width, int length);
