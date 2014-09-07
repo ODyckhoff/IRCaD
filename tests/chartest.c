@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include "player.h"
-#include "../environment/map/map.h"
+#include "../game/player/player.h"
+#include "../game/environment/map/map.h"
 
 int main(int argc, char** argv) {
     /* Create a player */
