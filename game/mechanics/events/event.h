@@ -60,11 +60,59 @@ enum categories {
 
 };
 
-/* Generic Event */
-typedef struct ev_t {
-    const enum types type;
-    const enum categories category;
-    char* data;
-} ev_t;
+/* Main Event */
+
+    typedef struct event_t {
+        const enum types type;
+        const enum categories category;
+        struct character_t character;
+        void *event; /* Will point to a struct defined below. */
+    } event_t;
+
+/* Action Events */
+
+    typedef struct act_drop_ev {
+        /* struct item_t *item; // DOES NOT EXIST YET. */
+    } act_drop_ev;
+
+    typedef struct act_inv_ev {
+        int status; /* Opening or closing inventory? */
+    } act_inv_ev;
+
+    typedef struct act_look_ev {
+        int direction;
+    } act_look_ev;
+
+    typedef struct act_move_ev {
+        int direction;
+    } act_move_ev;
+
+    typedef struct act_take_ev {
+        /* struct item_t *item; // DOES NOT EXIST YET */
+    } act_take_ev;
+
+/* Character Events */
+
+
+/* Combat Events */
+
+
+/* Game Events */
+
+
+/* Interact Events */
+
+
+/* Internal Events */
+
+
+/* Party Events */
+
+
+/* Player Events */
+
+
+/* World Events */
+
 
 #endif /* EVENT_H */

@@ -6,8 +6,13 @@
 #include "handler.h"
 
 /* Invoke individual event type handlers. */
-event_t* new_event(char* type, char* category) {
+event_t *makeevent(int type, int category) {
+    event_t *e = (event_t *) malloc( sizeof(event_t) );
 
+    e->type = type;
+    e->category = category;
+
+    return e;
 }
 
 
