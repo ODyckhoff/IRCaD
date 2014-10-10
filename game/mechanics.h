@@ -1,8 +1,7 @@
 #ifndef MECHANICS_H
 #define MECHANICS_H
 
-#include "events/event.h"
-#include "events/handler.h"
+#include "mechanics/event.h"
 
 int startevent(int type, int category, int datasize, void *data);
 

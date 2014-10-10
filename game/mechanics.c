@@ -4,10 +4,5 @@
 #include <stdlib.h>
 
 #include "mechanics.h"
+#include "mechanics/event.h"
 
-int startevent(int type, int category, int datasize, void *data) {
-    event_t *e;
-
-    e = makeevent(type, category);
-       buildevent(e, datasize, data);
-}
