@@ -13,5 +13,4 @@ typedef struct player_t {
 player_t* new_player(int account, int priv);
 void new_character(player_t* player, int id, char* name, int race, int class);
 
-
 #endif /* PLAYER_H */

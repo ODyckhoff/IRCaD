@@ -1,4 +1,3 @@
-/* player.c - creates and manages players. */
 #include <stdlib.h>
 
 #include "player.h"
@@ -26,3 +25,4 @@ void new_character(player_t* player, int id, char* name, int race, int class) {
         player->num_chars++;
     }
 }
+>>>>>>> master
