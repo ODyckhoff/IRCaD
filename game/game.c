@@ -6,7 +6,7 @@
 #include "game.h"
 
 game_t *new_game() {
-    game_t *game = (game_t *) malloc( sizeof(game_t) );
+    game_t *game = malloc( sizeof( game_t ) );
 
     return game;
 }

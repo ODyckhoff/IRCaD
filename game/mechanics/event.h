@@ -49,6 +49,7 @@ enum categories {
     INTERN_DB,
     INTERN_LOAD,
     INTERN_SAVE,
+    INTERN_IRC,
 
     PARTY_MEMBER,
     PARTY_PARY,

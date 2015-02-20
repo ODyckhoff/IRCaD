@@ -5,15 +5,6 @@
 
 #include "actevent.h"
 
-
-act_drop_ev *build_act_drop(int datasize, void *data) {
-
-    act_drop_ev *drop = (act_drop_ev *) malloc( sizeof(act_drop_ev) );
-    drop->item = (item_t *) get_act_data(ITEM, data);
-
-    return drop;
-}
-
 act_inv_ev *build_act_inv(int datasize, void *data) {
 
     act_inv_ev *inv = (act_inv_ev *) malloc( sizeof(act_inv_ev) );

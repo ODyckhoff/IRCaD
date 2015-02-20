@@ -7,7 +7,7 @@
 #include "game.h"
 #include "mechanics/event.h"
 
-int main(int argc, char **argv) {
+int main( int argc, char **argv ) {
 
     IRCaD *ircad = new_ircad();
     
@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 
 IRCaD *new_ircad() {
 
-    IRCaD *ircad = (IRCaD *) malloc( sizeof(IRCaD) );
+    IRCaD *ircad = malloc( sizeof( IRCaD ) );
 
     return ircad;
 }
