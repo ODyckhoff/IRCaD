@@ -4,20 +4,22 @@
 #include <stdio.h>
 
 #include "IRCaD.h"
-#include "game.h"
-#include "mechanics/event.h"
+/*#include "game.h"
+#include "mechanics/event.h"*/
+#include "irch.h"
+
+#include "Circle/init.h"
+
+IRCaD *ircad;
 
 int main( int argc, char **argv ) {
 
-    IRCaD *ircad = new_ircad();
-    
+    ircad = malloc( sizeof( IRCaD ) );
+    ircad->irc = init_irc();
+
+    sethandler( ircad->irc, irchandler );
+
+    irc_run();
 
 }
 
-
-IRCaD *new_ircad() {
-
-    IRCaD *ircad = malloc( sizeof( IRCaD ) );
-
-    return ircad;
-}
