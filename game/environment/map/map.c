@@ -3,9 +3,11 @@
 #include "colour.h"
 #include "map.h"
 #include "exits.h"
+#include "../../Circle/irc.h"
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 char* maptype_names[] = {"NULL", "World Map", "Town Map", "Cave Map"};
@@ -77,15 +79,17 @@ char* get_map_name(int id) {
     return maptype_names[id];
 }
 
-void print_map(map_t *map) {
+void print_map(irc_t *irc, char *chan, map_t *map) {
 /* This function will remain as it may be of use for web interface. */
     int i, j, id, tmp;
-    char* colour;
+    char *colour;
+    char *tmpstr = malloc( 512 );
+    char *tmpmsg = malloc( 512 );
 
     /* printf("\033[2J"); */ /*clear screen*/
     /* printf("\033[1;1H"); */ /*put at upper left*/
     for(j = 0; j < map->length; j++) {
-
+        memset( tmpmsg, 0, strlen( tmpmsg ) );
         for(i = 0; i < map->width; i++) {
             id = get_id(map->grid[i][j]);
             tmp = id;
@@ -95,11 +99,11 @@ void print_map(map_t *map) {
             }
 
             colour = colours[tmp];
-            printf("[%s%02d%s]", colour, id, KNRM);
+            sprintf(tmpstr, "[%s%02d%s]", colour, id, KNRM);
+            strcat(tmpmsg, tmpstr);
         }
-        printf("\n");
+        irc_privmsg(irc->s, chan, tmpmsg);
     }
-    printf("\n");
 }
 
 int chk_map(map_t* map, tile_t* tile, int xmod, int ymod) {

@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include "tile.h"
+#include "../../Circle/irc.h"
 
 typedef enum {
     WORLDMAP = 1,
@@ -20,7 +21,7 @@ typedef struct map_t {
 } map_t;
 
 map_t* new_map(int id, int width, int length);
-void print_map(map_t *map);
+void print_map(struct irc_t *irc, char *msg, map_t *map);
 char* get_map_name(int id);
 int chk_map(map_t* map, struct tile_t* tile, int xmod, int ymod);
 

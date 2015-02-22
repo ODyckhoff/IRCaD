@@ -55,6 +55,7 @@ typedef struct tile_t {
     int y;
     int exits; /* Binary 1111 - indicates all four exits are available */
     struct map_t *sub_map;
+    struct map_t *parent;
 } tile_t;
 
 tile_t* new_tile(int maptype, int x, int y, struct map_t *parent);

@@ -68,7 +68,10 @@ void world_gen(map_t *map) {
 
     /* Lair and mountain cave generation */
 
-    
+    if(TESTMODE) {
+        return;
+    }
+        
     /* Spawn terrain */
     tile_ptr = map->grid[width_m][length_m - 4]; /* Start at first blank tile north of town. */
 

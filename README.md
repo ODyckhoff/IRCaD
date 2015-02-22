@@ -28,9 +28,12 @@ Also the application was originally being written in Perl, so consider yourselve
 Downloading/Running IRCaD
 =========================
 
-I wouldn't recommend this just yet, mainly because there's not an awful lot of substance to the codebase, but if you fancy running it, you're going to have to compile it the hard way as I've not yet created a Makefile.
+Currently you can test out the map generation.
 
-This is partially because I can't be arsed and partially because I'm currently just developing, testing and debugging small components of the game, and haven't yet needed to be able to compile huge sections of the application all at once.
+First `cd` to the IRCaD/game/ directory, and then open `Circle/init.c` in a text editor.
+Lines 9, 17, 23, and 29 contain the options for irc server and port, nickname, nickerv authentication, and channel, respectively. These will later be edited in a config file. Set these to your desired values.
+
+Ensuring you are still in the game directory, compile with `gcc -g -o testmap IRCaD.c irch.c utils/*.c Circle/*.c Circle/util/*.c environment/map/*.c` and run it with `./test`. To generate a map, go to the IRC channel that the bot has joined, and type `GEN MAP X`, substituing X with an integer number greater than 7 but less than 22.
 
 I intend to have a set of Makefiles available, for compiling and testing smaller components, and then the big daddy Makefile that compiles the whole lot. This latter file probably won't exist until at least after pre-alpha.
 
