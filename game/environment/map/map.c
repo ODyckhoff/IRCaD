@@ -102,7 +102,10 @@ void print_map(irc_t *irc, char *chan, map_t *map) {
             sprintf(tmpstr, "[%s%02d%s]", colour, id, KNRM);
             strcat(tmpmsg, tmpstr);
         }
-        irc_privmsg(irc->s, chan, tmpmsg);
+        if(irc == NULL || chan == NULL)
+            printf("%s\n", tmpmsg);
+        else
+            irc_privmsg(irc->s, chan, tmpmsg);
     }
 }
 

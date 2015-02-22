@@ -16,10 +16,10 @@ help:
 
 # target: map - Compiles map features.
 
-MAPFILES = $(MAPDIR)/maptest.c $(MAPDIR)/map.c $(MAPDIR)/tile.c $(MAPDIR)/exits.c $(MAPDIR)/gen.c $(UTILDIR)/printutil.c
-MAPEXEC = maptest
+MAPFILES = tests/maptest.c $(MAPDIR)/map.c $(MAPDIR)/tile.c $(MAPDIR)/exits.c $(MAPDIR)/gen.c $(UTILDIR)/printutil.c
+MAPEXEC = ./tests/maptest
 
-map: $(MAPFILES)
-	@$(CC) -o $(MAPEXEC) $(MAPFILES)
-	@echo "executable 'maptest' created. Run with ./maptest"
+maptest: $(MAPFILES)
+	@$(CC) -o $(MAPEXEC) -D TESTMODE=0 $(MAPFILES) game/Circle/*.c game/Circle/util/*.c
+	@echo "executable 'maptest' created. Run with ./tests/maptest"
 

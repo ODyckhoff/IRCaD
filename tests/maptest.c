@@ -1,8 +1,8 @@
 /* maptest.c - A file intended solely for testing the map functionality and is not meant to be a part of the game itself. */
-#include "map.h"
-#include "tile.h"
-#include "gen.h"
-#include "exits.h"
+#include "../game/environment/map/map.h"
+#include "../game/environment/map/tile.h"
+#include "../game/environment/map/gen.h"
+#include "../game/environment/map/exits.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -36,12 +36,13 @@ int main(int argc, char **argv) {
     printf("Testing town generation in town_gen\n");
     town_gen(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
 
-     print_map(map);
+     print_map( ( irc_t * ) NULL, ( char * ) NULL, map);
 
     if(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map == NULL)
         fprintf(stderr, "Error, no Town Map linked\n");
     else
-        print_map(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
+        print_map( ( irc_t *) NULL, ( char * ) NULL,
+                    map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
 
     printf("Testing exits code\n");
     char *str = exitstr(15);

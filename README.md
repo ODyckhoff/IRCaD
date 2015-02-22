@@ -28,16 +28,16 @@ Also the application was originally being written in Perl, so consider yourselve
 Downloading/Running IRCaD
 =========================
 
-Currently you can test out the map generation.
+Currently you can test out the map generation in IRC.
 
-First `cd` to the IRCaD/game/ directory, and then open `Circle/init.c` in a text editor.
+First `cd` to the game directory, and then open `Circle/init.c` in a text editor.
 Lines 9, 17, 23, and 29 contain the options for irc server and port, nickname, nickerv authentication, and channel, respectively. These will later be edited in a config file. Set these to your desired values.
 
-Ensuring you are still in the game directory, compile with `gcc -g -o testmap IRCaD.c irch.c utils/*.c Circle/*.c Circle/util/*.c environment/map/*.c` and run it with `./test`. To generate a map, go to the IRC channel that the bot has joined, and type `GEN MAP X`, substituing X with an integer number greater than 7 but less than 22.
+Ensuring you are still in the game directory, compile with `gcc -g -o testmap -D TESTMAP=0 IRCaD.c irch.c utils/*.c Circle/*.c Circle/util/*.c environment/map/*.c` and run it with `./test`. To generate a map, go to the IRC channel that the bot has joined, and type `GEN MAP X`, substituing X with an integer number greater than 7 but less than 22.
 
 I intend to have a set of Makefiles available, for compiling and testing smaller components, and then the big daddy Makefile that compiles the whole lot. This latter file probably won't exist until at least after pre-alpha.
 
-Currently, one may run the maptests by using `cd` to navigate to `game/environment/map`, and then running `gcc -o maptest map.c tile.c`, followed by `./maptest`. All it will do is spew out some numbers and show you some partially/fully generated maps, but hey, that's pretty, right?
+One may run the non-IRC maptests by using `make maptest`, and then running `./maptest`. All it will do is spew out some numbers and show you some partially/fully generated maps, but hey, that's pretty, right?
 
 Design
 ======
