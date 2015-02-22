@@ -37,9 +37,9 @@ Ensuring you are still in the game directory, compile with `gcc -g -o testmap -D
 
 I intend to have a set of Makefiles available, for compiling and testing smaller components, and then the big daddy Makefile that compiles the whole lot. This latter file probably won't exist until at least after pre-alpha.
 
-One may run the non-IRC maptests by using `make maptest`, and then running `./maptest`. All it will do is spew out some numbers and show you some partially/fully generated maps, but hey, that's pretty, right?
+One may run the non-IRC maptests by using `make maptest`, and then running `./tests/maptest`. All it will do is spew out some numbers and show you some partially/fully generated maps, but hey, that's pretty, right?
 
-There is also a character test that can be built using `make chartest` and then run using `./chartest`.
+There is also a character test that can be built using `make chartest` and then run using `./tests/chartest`.
 
 Design
 ======
