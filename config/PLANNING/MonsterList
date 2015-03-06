@@ -17,6 +17,14 @@ Groups:
   9 (d12*str|int)/3
   10 (d12*str|int/2 
 
+Type of creature depends on specific drops, but all monsters drop a levelled (nd8) amount of gold.
+
+    Beast - brewing reagents and smithing reagents
+    Humanoid - armour and smithing reagents
+    Elemental - alchemical and brewing reagents
+    Undead - alchemical reagents and weapons
+    Giant - weapons and armour
+
 Name|Type|str,int|group|Habitat|allignment
 
 Rat|beast|str|1|farmland|neutral
