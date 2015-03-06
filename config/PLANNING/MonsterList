@@ -24,6 +24,17 @@ Type of creature depends on specific drops, but all monsters drop a levelled (nd
     Elemental - alchemical and brewing reagents
     Undead - alchemical reagents and weapons
     Giant - weapons and armour
+    
+Spawn chance when entering a tile is dictated by your character's level compared to the tile you're entering.
+To make the game a little less unfair for new players entering tiles they're too low to face the monsters in, and for experienced players not wanting to wade through hordes to get to a dragon, this formula should work:
+
+Tile Level = Player Level:  0.5 chance of spawn
+Tile level within 1 of player level: 0.4 chance of spawn
+Tile level within 3 of player level: 0.3 chance of spawn
+Tile level within 5 of player level: 0.2 chance of spawn
+Tile level more than 5 different from player level: 0.1 chance of spawn
+    
+    
 
 Name|Type|str,int|group|Habitat|allignment
 
