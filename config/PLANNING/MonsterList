@@ -1,11 +1,21 @@
-Categories define attack type, monsters are group 1-5 in stats. 
+Categories define attack type, monsters are group 1-10 in stats. 
 
 Groups:
 * Award (n) XP where n is the group number.
 * 50HP + (n-1)15
 * Stats 8 + (n-1)1
-* int used when magic, str used when melee
-* Does ((d4*str|int)/6, (d6*str|int)/5, (d8*str|int)/4, (d10*str|int)/3, (d12*str|int/2) per group.
+* int used when magic, str used when melee. 
+* Does 
+  1 (d4*str|int)/7
+  2 (d4*str|int)/6
+  3 (d6*str|int)/6
+  4 (d6*str|int)/5
+  5 (d8*str|int)/5
+  6 (d8*str|int)/4
+  7 (d10*str|int)/4
+  8 (d10*str|int)/3
+  9 (d12*str|int)/3
+  10 (d12*str|int/2 
 
 Name|Type|str,int|group|Habitat|allignment
 
