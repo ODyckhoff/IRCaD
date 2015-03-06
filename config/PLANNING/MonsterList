@@ -49,11 +49,9 @@ Rabbit|beast|str|2|grassland|neutral
 Hawk|beast|str|2|grassland|neutral
 Deer|beast|str|2|grassland|neutral
 Highwayman|humanoid|str|2|grassland|hostile
-Earthminion|elemental|int|2|grassland|hostile
-Earthshard|elemental|int|2|grassland|hostile
+Poacher|humanoid|str|2|grassland|hostile
 
-Zombie|undead|str|3|shrubland|hostile
-Zombiemage|undead|int|3|shrubland|hostile
+Earth Spirit|elemental|int|3|shrubland|neutral
 Wildcat|beast|str|3|shrubland|hostile
 Wolfcub|beast|str|3|shrubland|hostile
 Troll|humanoid|str|3|shrubland|neutral
@@ -61,27 +59,42 @@ Trollmage|humanoid|int|3|shrubland|neutral
 
 Wolf|beast|str|4|forest|hostile
 Panther|beast|str|4|forest|hostile
-Poacher|humanoid|str|4|forest|hostile
+Forest Sprite|elemental|int|4|forest|neutral
+Troll Shaman|Humanoid|int|4|forest|hostile
+Treant|elemental|str|4|forest|hostile
 
-Python|beast|str|5|swamp|hostile
-WaterElemental|elemental|int|5|swamp|hostile
+Tree Python|beast|str|5|swamp|hostile
+Swamp Mulcher|humanoid|5|swamp|hostile
+Water Elemental|elemental|int|5|swamp|hostile
+Mulch Zombie|undead|str|5|swamp|hostile
+Swamp Witch|humanoid|int|5|swamp|hostile
 
 Barbarian|humanoid|str|6|tundra|hostile
 Shail|undead|int|6|tundra|hostile
-Direwolfcub|beast|str|6|tundra|hostile
+Snow Sprite|elemental|int|6|tundra|hostile
+Frozen Skeleton|undead|str|6|tundra|hostile
+Direwolf Juvenile|beast|str|6|tundra|hostile
 
 Direwolf|beast|str|7|deepforest|hostile
-Alphawolf|beast|str|7|deepforest|hostile
+Dryad|humanoid|int|7|deepforest|neutral
 Forestsprite|elemental|int|7|deepforest|hostile
 Ent|giant|str|7|deepforest|neutral
-ForestSpriteMatriarch|elemental|int|7|deepforest|hostile
+Possessed Tree|undead|str|7|deepforest|hostile
 
-Snowsprite|elemental|int|8|taiga|hostile
-ZombieMage|undead|int|8|taiga|hostile
-Zombielord|undead|str|8|taiga|hostile
-Alphadirewolf|beast|str|8|taiga|hostile
-SnowSpriteMatriarch|elemental|int|8|taiga|hostile
+Alpha Direwolf|beast|str|8|taiga|hostile
+Possessed Ent|giant|str|8|taiga|hostile
+Ghoul|undead|int|8|taiga|hostile
+Ice Maiden|humanoid|int|8|taiga|hostile
+Ice Vine|elemental|str|8|taiga|hostile
 
 Minotaur|giant|str|9|mountaincave|hostile
+Rock Snake|elemental|int|9|mountaincave|hostile
+Necromancer|undead|int|9|mountaincave|hostile
+Barbarian Chief|humanoid|str|9|mountaincave|hostile
+Astral Summon|beast|str|9|mountaincave|hostile
 
-Dragon|giant|str|10|Lair|hostile
+Red Dragon|giant|str|10|Lair|hostile
+Green Dragon|giant|str|10|Lair|hostile
+Bronze Dragon|giant|int|10|Lair|hostile
+Blue Dragon|giant|int|10|Lair|hostile
+Black Dragon|giant|int|10|Lair|hostile
