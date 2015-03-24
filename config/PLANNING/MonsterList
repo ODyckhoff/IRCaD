@@ -1,11 +1,40 @@
-Categories define attack type, monsters are group 1-5 in stats. 
+Categories define attack type, monsters are group 1-10 in stats. 
 
 Groups:
 * Award (n) XP where n is the group number.
 * 50HP + (n-1)15
 * Stats 8 + (n-1)1
-* int used when magic, str used when melee
-* Does ((d4*str|int)/6, (d6*str|int)/5, (d8*str|int)/4, (d10*str|int)/3, (d12*str|int/2) per group.
+* int used when magic, str used when melee. 
+* Does 
+  1 (d4*str|int)/7
+  2 (d4*str|int)/6
+  3 (d6*str|int)/6
+  4 (d6*str|int)/5
+  5 (d8*str|int)/5
+  6 (d8*str|int)/4
+  7 (d10*str|int)/4
+  8 (d10*str|int)/3
+  9 (d12*str|int)/3
+  10 (d12*str|int/2 
+
+Type of creature depends on specific drops, but all monsters drop a levelled (nd8) amount of gold.
+
+    Beast - brewing reagents and smithing reagents
+    Humanoid - armour and smithing reagents
+    Elemental - alchemical and brewing reagents
+    Undead - alchemical reagents and weapons
+    Giant - weapons and armour
+    
+Spawn chance when entering a tile is dictated by your character's level compared to the tile you're entering.
+To make the game a little less unfair for new players entering tiles they're too low to face the monsters in, and for experienced players not wanting to wade through hordes to get to a dragon, this formula should work:
+
+Tile Level = Player Level:  0.5 chance of spawn
+Tile level within 1 of player level: 0.4 chance of spawn
+Tile level within 3 of player level: 0.3 chance of spawn
+Tile level within 5 of player level: 0.2 chance of spawn
+Tile level more than 5 different from player level: 0.1 chance of spawn
+    
+    
 
 Name|Type|str,int|group|Habitat|allignment
 
@@ -20,11 +49,9 @@ Rabbit|beast|str|2|grassland|neutral
 Hawk|beast|str|2|grassland|neutral
 Deer|beast|str|2|grassland|neutral
 Highwayman|humanoid|str|2|grassland|hostile
-Earthminion|elemental|int|2|grassland|hostile
-Earthshard|elemental|int|2|grassland|hostile
+Poacher|humanoid|str|2|grassland|hostile
 
-Zombie|undead|str|3|shrubland|hostile
-Zombiemage|undead|int|3|shrubland|hostile
+Earth Spirit|elemental|int|3|shrubland|neutral
 Wildcat|beast|str|3|shrubland|hostile
 Wolfcub|beast|str|3|shrubland|hostile
 Troll|humanoid|str|3|shrubland|neutral
@@ -32,27 +59,42 @@ Trollmage|humanoid|int|3|shrubland|neutral
 
 Wolf|beast|str|4|forest|hostile
 Panther|beast|str|4|forest|hostile
-Poacher|humanoid|str|4|forest|hostile
+Forest Sprite|elemental|int|4|forest|neutral
+Troll Shaman|Humanoid|int|4|forest|hostile
+Treant|elemental|str|4|forest|hostile
 
-Python|beast|str|5|swamp|hostile
-WaterElemental|elemental|int|5|swamp|hostile
+Tree Python|beast|str|5|swamp|hostile
+Swamp Mulcher|humanoid|5|swamp|hostile
+Water Elemental|elemental|int|5|swamp|hostile
+Mulch Zombie|undead|str|5|swamp|hostile
+Swamp Witch|humanoid|int|5|swamp|hostile
 
 Barbarian|humanoid|str|6|tundra|hostile
 Shail|undead|int|6|tundra|hostile
-Direwolfcub|beast|str|6|tundra|hostile
+Snow Sprite|elemental|int|6|tundra|hostile
+Frozen Skeleton|undead|str|6|tundra|hostile
+Direwolf Juvenile|beast|str|6|tundra|hostile
 
 Direwolf|beast|str|7|deepforest|hostile
-Alphawolf|beast|str|7|deepforest|hostile
+Dryad|humanoid|int|7|deepforest|neutral
 Forestsprite|elemental|int|7|deepforest|hostile
 Ent|giant|str|7|deepforest|neutral
-ForestSpriteMatriarch|elemental|int|7|deepforest|hostile
+Possessed Tree|undead|str|7|deepforest|hostile
 
-Snowsprite|elemental|int|8|taiga|hostile
-ZombieMage|undead|int|8|taiga|hostile
-Zombielord|undead|str|8|taiga|hostile
-Alphadirewolf|beast|str|8|taiga|hostile
-SnowSpriteMatriarch|elemental|int|8|taiga|hostile
+Alpha Direwolf|beast|str|8|taiga|hostile
+Possessed Ent|giant|str|8|taiga|hostile
+Ghoul|undead|int|8|taiga|hostile
+Ice Maiden|humanoid|int|8|taiga|hostile
+Ice Vine|elemental|str|8|taiga|hostile
 
 Minotaur|giant|str|9|mountaincave|hostile
+Rock Snake|elemental|int|9|mountaincave|hostile
+Necromancer|undead|int|9|mountaincave|hostile
+Barbarian Chief|humanoid|str|9|mountaincave|hostile
+Astral Summon|beast|str|9|mountaincave|hostile
 
-Dragon|giant|str|10|Lair|hostile
+Red Dragon|giant|str|10|Lair|hostile
+Green Dragon|giant|str|10|Lair|hostile
+Bronze Dragon|giant|int|10|Lair|hostile
+Blue Dragon|giant|int|10|Lair|hostile
+Black Dragon|giant|int|10|Lair|hostile

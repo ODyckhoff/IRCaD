@@ -1,25 +1,35 @@
 Am making a brief overview of the items list, giving item IDs.
 Only weapons so far, this will allow the admins to 'give' at item to a player. 
 '/admingive 1 playerX' would give playerX item 1, a tree branch.
-The tree branch can be equipped by a warrior or a wizard, but the two are different IDs.
+
 
 Format: 
-ID | ItemCode | Name | Type | Rarity | Slot | ClassType | BuffCode
+ID | ItemCode | Name | ItemType | Rarity | Slot | ClassType | Buffcode
 
 ID is an integer that applies to one item only.
-ItemCode is a single letter, either W A or M. (weapon, armour, miscellaneous)
+ItemCode is a single letter, either W A or M (weapon, armour, miscellaneous)
 Name is a text field.
-Type defines which subgroup of the ItemCode the item is in. (Longsword)
+ItemType defines which subgroup of the ItemCode the item is in:
+  -on weapons, the type of weapon it is. (Longsword)
+  -on armour, the classes that can equip it. He(avy, protectors and warriors), Li(ght, Rangers and Rogues), Cl(oth, Sorcerers and Wizards)
+  -on misc, the type of misc object it is. Po(tion), Sm(ithing reagent), Al(chemical reagent), Br(ewing reagent), Qu(est item), AD(min item)
 Rarity defines the rarity index of the type, and how likely an item is to drop from mobs. (5)
 Slot is where item is equipped. (Mainhand)
-ClassType is a 2 letter code which allows a class to equip the item. (Wa) 
+ClassType is a 2 letter code which determines the class that can use the item or AL, meaning all.
 BuffCode determines whether an item has:
 * set buffs when it spawns (y)
 * a set number of randomly generated ones. (n0, n1, n2, n3)
 
 So when making an iron longsword:
-ID is 5, W for weapon, Iron Longsword is the name, longsword is the type, iron is the material, mainhand is the slot, 
+ID is 5, W for weapon, Iron Longsword is the name, longsword is the type, 5 is the rarity, mainhand is the slot, 
 wa is the classtype and the buffcode is n1, as it does not have set buffs and can be randomly assigned 1 buff.
+
+
+
+THE ALMIGHTY ITEM LIST (To be put into Mysql)
+
+
+0|M|Fluffy Happy Pillow|AD|0|mainhand|AL|y
 
 1|W|Tree Branch|longsword|01|mainhand|wa|n0
 2|W|Splinted Longsword|longsword|02|mainhand|wa|n0
@@ -32,18 +42,21 @@ wa is the classtype and the buffcode is n1, as it does not have set buffs and ca
 9|W|Blackfired Longsword|longsword|09|mainhand|wa|n3
 10|W|Doomguard's Smite|longsword|10|mainhand|wa|y
 11|W|Ironhand's Fury|longsword|10|mainhand|wa|y
+
 12|W|Splintered Mace|mace|02|mainhand;offhand|wa|n0
 13|W|Iron Mace|mace|04|mainhand/offhand|wa|n1
 14|W|Red Crystal Mace|mace|06|mainhand/offhand|wa|n1
 15|W|Adamantine Mace|mace|08|mainhand/offhand|wa|n2
 16|W|Doomguard's Thorns|mace|10|mainhand/offhand|wa|y
 17|W|Ironhand's Wrath|mace|10|mainhand/offhand|wa|y
+
 18|W|Wood Bark Shield|shield|01|offhand|wa/pr|n0
 19|W|Rusty Shield|shield|03|offhand|wa/pr|n0
 20|W|Iron Shield|shield|05|offhand|wa/pr|n1
 21|W|Titanium Shield|shield|07|offhand|wa/pr|n2
 22|W|Captain's shield|shield|09|offhand|wa/pr|n3
 23|W|Ironhand's Protector|shield|10|offhand|wa/pr|y
+
 24|W|Sharp Stick|dagger|01|mainhand/offhand|ro|n0
 25|W|Flint Knife|dagger|02|mainhand/offhand|ro|n0
 26|W|Rusty Dagger|dagger|03|mainhand/offhand|ro|n0
@@ -55,17 +68,20 @@ wa is the classtype and the buffcode is n1, as it does not have set buffs and ca
 32|W|Shark Tooth Blade|dagger|09|mainhand/offhand|ro|n3
 33|W|Dagger of Shmloe|dagger|10|mainhand/offhand|ro|y
 34|W|Majora's Twinkler|dagger|10|mainhand/offhand|ro|y
+
 35|W|Wooden Shortsword|shortsword|02|mainhand|ro|n0
 36|W|Iron Shortsword|shortsword|04|mainhand|ro|n1
 37|W|Red Crystal Shortsword|shortsword|06|mainhand|ro|n1
 38|W|Adamantine Shortsword|shortsword|08|mainhand|ro|n2
 39|W|Majora's Tickle Stick|shortsword|10|mainhand|ro|y
+
 40|W|Table Knife|exotic|01|mainhand|ro|n0
 41|W|Cutlass|exotic|03|mainhand|ro|n0
 42|W|Iron Claws|exotic|05|mainhand|ro|n1
 43|W|Schimitar|exotic|07|mainhand|ro|n2
 44|W|Rainforest Blade|exotic|09|mainhand|ro|n3
 45|W|Machete of Shmole|exotic|10|mainhand|ro|y
+
 46|W|Tree Branch|staff|01|mainhand,offhand|wi|n0
 47|W|Walking Stick|staff|02|mainhand,offhand|so|n0
 48|W|Quarterstaff|staff|03|mainhand,offhand|wi|n0
@@ -78,6 +94,7 @@ wa is the classtype and the buffcode is n1, as it does not have set buffs and ca
 55|W|Flaming Staff|staff|09|mainhand,offhand|so|n3
 56|W|Nature's Trunk|staff|10|mainhand,offhand|wi|y
 57|W|Channelled Anger|staff|10|mainhand,offhand|so|y
+
 58|W|Flame Charm Bracelet|cestus|01|mainhand,offhand|so|n0
 59|W|Peyote Bracelet|cestus|02|mainhand,offhand|wi|n0
 60|W|Sparkling Bracelet|cestus|03|mainhand,offhand|so|n0
@@ -90,6 +107,7 @@ wa is the classtype and the buffcode is n1, as it does not have set buffs and ca
 67|W|Flowering Cestus|cestus|09|mainhand,offhand|wi|n3
 68|W|The Lich's Hands|cestus|10|mainhand,offhand|so|y
 69|W|Claws of the Spirit Beast|cestus|10|mainhand,offhand|wi|y
+
 70|W|Rotted Wooden Greatsword|greatsword|01|mainhand,offhand|pr|n0
 71|W|Splintered Wooden Greatsword|greatsword|02|mainhand,offhand|pr|n0
 72|W|Wooden Greatsword|greatsword|03|mainhand,offhand|pr|n0
@@ -100,22 +118,26 @@ wa is the classtype and the buffcode is n1, as it does not have set buffs and ca
 77|W|Adamantine Greatsword|greatsword|08|mainhand,offhand|pr|n2
 78|W|Skullcrushing Greatsword|greatsword|09|mainhand,offhand|pr|n3
 79|W|Sword of Zarabriel|greatsword|10|mainhand,offhand|pr|y
+
 80|W|Hatchet|axe|01|mainhand|pr|n0
 81|W|Iron Axe|axe|03|mainhand|pr|n0
 82|W|Red Crystal Axe|axe|05|mainhand|pr|n1
 83|W|Titanium Axe|axe|07|mainhand|pr|n2
 84|W|Adamantine Axe|axe|09|mainhand|pr|n3
 85|W|Ironhand's Smite|axe|10|mainhand|pr|y
+
 86|W|Twine Shortbow|shortbow|02|mainhand,offhand|ra|n0
 87|W|Elm Shortbow|shortbow|05|mainhand,offhand|ra|n1
 88|W|Angled Shortbow|shortbow|08|mainhand,offhand|ra|n2
 89|W|Dryad Shortbow|shortbow|09|mainhand,offhand|ra|n3
 90|W|Carved Creatures Bow|shortbow|10|mainhand,offhand|ra|y
+
 91|W|Crude Longbow|longbow|01|mainhand,offhand|ra|n0
 92|W|Birch Longbow|longbow|04|mainhand,offhand|ra|n1
 93|W|Filigree Longbow|longbow|07|mainhand,offhand|ra|n2
 94|W|Elven Longbow|longbow|09|mainhand,offhand|ra|n3
 95|W|Bow of the Forest|longbow|10|mainhand,offhand|ra|y
+
 96|W|Splintered Crossbow|crossbow|03|mainhand,offhand|ra|n0
 97|W|Oak Crossbow|crossbow|06|mainhand,offhand|ra|n1
 98|W|Soldier's Crossbow|crossbow|09|mainhand,offhand|ra|n3
