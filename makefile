@@ -20,7 +20,7 @@ MAPFILES = $(MAPDIR)/map.c $(MAPDIR)/tile.c $(MAPDIR)/exits.c $(MAPDIR)/gen.c $(
 MAPEXEC = ./tests/maptest
 
 maptest: $(MAPFILES)
-	@$(CC) -o $(MAPEXEC) -D TESTMODE=0 $(MAPFILES) game/Circle/*.c game/Circle/util/*.c
+	@$(CC) -o $(MAPEXEC) -D TESTMODE=0 $(MAPFILES) tests/maptest.c game/Circle/*.c game/Circle/util/*.c
 	@echo "executable 'maptest' created. Run with ./tests/maptest"
 
 chartest:

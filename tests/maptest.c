@@ -22,10 +22,10 @@ int main(int argc, char **argv) {
         printf("Hurray, we have a map! Generation succeeded.\n");
 
     printf("Testing world generation in world_gen\n");
-    long double cstart = (long double)clock();
+    clock_t cstart = clock();
     world_gen(map);
-    long double cend = (long double)clock();
-    long double cdiff = cend - cstart;
+    clock_t cend = clock();
+    clock_t cdiff = (long double )cend - cstart;
 
     long double tstart = cstart/CLOCKS_PER_SEC;
     long double tend = cend/CLOCKS_PER_SEC;
@@ -36,11 +36,13 @@ int main(int argc, char **argv) {
     printf("Testing town generation in town_gen\n");
     town_gen(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
 
+    printf("\nWorld Map\n========\n\n");
      print_map( ( irc_t * ) NULL, ( char * ) NULL, map);
 
     if(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map == NULL)
         fprintf(stderr, "Error, no Town Map linked\n");
     else
+        printf("\nTown Map\n========\n\n");
         print_map( ( irc_t *) NULL, ( char * ) NULL,
                     map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
 
