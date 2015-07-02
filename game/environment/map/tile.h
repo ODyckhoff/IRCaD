@@ -20,7 +20,7 @@ typedef enum {
     SHRINE       = 13,
     OUTDOORCAFE  = 14,
     PLAZA        = 15,
-    TOWNINT      = 16,
+    TOWNINT      = 16
 } town_t;
 
 typedef enum {
@@ -36,13 +36,13 @@ typedef enum {
     LAIR         = 10,
     TOWN         = 11,
     TOWNGATEEXT  = 12,
-    MOUNTAIN     = 13,
+    MOUNTAIN     = 13
 } world_t;
 
 typedef enum { /* Global BLANK defines edges of cave to simulate shape. */
     CAVEINT      = 1,
     DUNGEON      = 2,
-    TREASUREROOM = 3,
+    TREASUREROOM = 3
 } cave_t;
 
 #include "map.h"

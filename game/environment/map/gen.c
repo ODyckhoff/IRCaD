@@ -8,20 +8,22 @@
 
 void world_gen(map_t *map) {
 /* This function will generate a world map */
-    if(map->id != WORLDMAP) {
-        fprintf(stderr, "Error, provided map for world generation is not a WORLDMAP type\n");
-        exit(1);
-    }
 
     tile_t *tile_ptr;
+    tile_t *tile_m;
     int i, j;
     int width_m = (map->width - 1)/2;
     int length_m = (map->length - 1)/2;
     int dir = 0;
     int stop = 0;
 
+    if(map->id != WORLDMAP) {
+        fprintf(stderr, "Error, provided map for world generation is not a WORLDMAP type\n");
+        exit(1);
+    }
+
     /* Set centre tile_t structure to "town" type. Set tile sub_map to new town map. */
-    tile_t *tile_m = map->grid[width_m][length_m];
+    tile_m = map->grid[width_m][length_m];
     set_id(tile_m, TOWN);
     map->signif = tile_m;
 
@@ -201,17 +203,20 @@ void world_gen(map_t *map) {
 
 void town_gen(map_t *map) {
 /* This function will generate a town map */
-    if(map->id != TOWNMAP) {
-        fprintf(stderr, "Error, provided map for town generation is not a TOWNMAP type\n");
-        exit(1);
-    }
     int features[] = {PARK, SHRINE, OUTDOORCAFE, PLAZA};
 
     int width_m = (map->width - 1)/2;
     int length_m = (map->length - 1)/2;
 
+    tile_t *tile_ptr;
+
+    if(map->id != TOWNMAP) {
+        fprintf(stderr, "Error, provided map for town generation is not a TOWNMAP type\n");
+        exit(1);
+    }
+
     /* Centre Tile becomes the Guild Hall */
-    tile_t *tile_ptr = map->grid[width_m][length_m];
+    tile_ptr = map->grid[width_m][length_m];
     set_id(tile_ptr, GUILDHALL);
     set_desc(tile_ptr, "The Guild Hall is the hub of the town's operations");
     map->signif = tile_ptr;

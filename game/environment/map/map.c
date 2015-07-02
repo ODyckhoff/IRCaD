@@ -4,6 +4,7 @@
 #include "map.h"
 #include "exits.h"
 #include "../../Circle/irc.h"
+#include "../../Circle/command.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,6 +17,8 @@ char* colours[] = { KNRM, KRED, KGRN, KYEL, KBLU, KMAG, KCYN };
 map_t* new_map(int mapid, int width, int length) {
 
     int i, j;
+    map_t *map;
+    tile_t *tile;
 
     /* First we ensure that width and length are odd numbers */
     if((width & 1) == 0)
@@ -25,7 +28,7 @@ map_t* new_map(int mapid, int width, int length) {
         length++;
 
     /* Allocate memory the size of a map_t structure + the size of the contained grid of tile_t structures */
-    map_t *map = malloc((sizeof(map_t) - sizeof(tile_t)) + (sizeof(tile_t)*width*length));
+    map = malloc((sizeof(map_t) - sizeof(tile_t)) + (sizeof(tile_t)*width*length));
     if(map == NULL) {
         fprintf(stderr, "Error, could not allocate memory for map_t structure\n");
         exit(1); /* Exit codes to be defined for subsequent cycles */
@@ -53,7 +56,7 @@ map_t* new_map(int mapid, int width, int length) {
         for(j = 0; j < length; j++) {
             map->grid[i][j] = new_tile(mapid, i, j, map);
 
-            tile_t* tile = map->grid[i][j];
+            tile = map->grid[i][j];
             
             /* Exits code to remove exits from edges */
             if(i == 0) {

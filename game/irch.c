@@ -16,6 +16,8 @@ int irchandler( irc_t *irc, char *nick, char *channel, char *msg ) {
     char *args;
     int mapwidth;
 
+    map_t *map;
+
     if( strncmp( msg, "GEN MAP", 7 ) == 0 ) {
 
         args = malloc( strlen( msg + 8 ) );
@@ -23,11 +25,12 @@ int irchandler( irc_t *irc, char *nick, char *channel, char *msg ) {
         token = strsep( &args, " " );
         mapwidth = atoi( token );
 
-        map_t *map = new_map( WORLDMAP, mapwidth, mapwidth );
+        map = new_map( WORLDMAP, mapwidth, mapwidth );
         world_gen( map );
         town_gen(map->grid[(map->width - 1)/2][(map->length - 1)/2]->sub_map);
 
         print_map(irc, channel, map);
     }
 
+    return 0;
 }

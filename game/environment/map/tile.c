@@ -62,6 +62,7 @@ char* get_name(tile_t* tile) {
             return cave_t_names[tile->id];
             break;
     }
+    return "blank";
 }
 
 int get_id(tile_t* tile) {
@@ -86,6 +87,8 @@ tile_t* get_n(tile_t* tile) {
 
     if(chk_map(parent, tile, 0, -1))
         return tile->parent->grid[tile->x][tile->y - 1];
+    else
+        return tile;
 }
 
 tile_t* get_e(tile_t* tile) {
@@ -94,6 +97,8 @@ tile_t* get_e(tile_t* tile) {
 
     if(chk_map(parent, tile, 1, 0))
         return tile->parent->grid[tile->x + 1][tile->y];
+    else
+        return tile;
 }
 
 tile_t* get_s(tile_t* tile) {
@@ -102,6 +107,8 @@ tile_t* get_s(tile_t* tile) {
 
     if(chk_map(parent, tile, 0, 1))
         return tile->parent->grid[tile->x][tile->y + 1];
+    else
+        return tile;
 }
 
 tile_t* get_w(tile_t* tile) {
@@ -109,7 +116,9 @@ tile_t* get_w(tile_t* tile) {
     map_t* parent = get_parent(tile);
 
     if(chk_map(parent, tile, -1, -0))
-        tile->parent->grid[tile->x - 1][tile->y];
+        return tile->parent->grid[tile->x - 1][tile->y];
+    else
+        return tile;
 }
 
 void print_tile(tile_t *cur_tile) {

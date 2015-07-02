@@ -7,7 +7,7 @@
 typedef enum {
     WORLDMAP = 1,
     TOWNMAP  = 2,
-    CAVEMAP  = 3,
+    CAVEMAP  = 3
 } mapid_t;
 
 typedef struct map_t {

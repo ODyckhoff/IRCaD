@@ -84,7 +84,7 @@ enum categories {
     } act_inv_ev;
 
     typedef struct act_look_ev {
-        int direction;
+        int direction; /* What direction is the player looking? */
     } act_look_ev;
 
     typedef struct act_move_ev {

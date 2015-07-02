@@ -15,7 +15,7 @@ typedef struct listener_t {
     struct char_listener_t *character;
     struct com_listener_t *combat;
     struct game_listener_t *game;
-    struct interact_listener_t *interact;
+    struct interface_listener_t *interface;
     struct intern_listener_t *internal;
     struct party_listener_t *party;
     struct player_listener_t *player;

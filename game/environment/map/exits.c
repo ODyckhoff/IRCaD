@@ -14,9 +14,7 @@ char* exitstr(int exits) {
     const char *names[4];
     char dir[4][6];
     char* format;
-    char* str;
     int cpy = exits;
-    int i = 0;
     int bitcount = 0;
     int dircount = -1;
 
@@ -51,6 +49,8 @@ char* exitstr(int exits) {
         break;
         /* default: deal with this when error reporting is implemented */
     }
+
+    return "";
 }
 
 int isvalid(int exits, char dir) {
