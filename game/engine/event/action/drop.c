@@ -1,4 +1,4 @@
-/* drop.c - will handle mechanics involved in dropping items from inventory. */
+/* drop.c - will handle engine involved in dropping items from inventory. */
 
 act_drop_ev *build_act_drop( int datasize, void *data ) {
 

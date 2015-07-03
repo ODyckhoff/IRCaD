@@ -5,7 +5,7 @@
 
 #include "IRCaD.h"
 /*#include "game.h"*/
-#include "mechanics.h"
+#include "engine.h"
 #include "irch.h"
 #include "utils/share.h"
 
@@ -19,7 +19,8 @@ int main( int argc, char **argv ) {
     /* So... it begins. Let's make the IRCaD instance. */
     ircad = malloc( sizeof( IRCaD ) );
 
-    ircad->listeners = reglstnr(); /* Initialise all event listeners */
+    enginit( ircad );
+
     ircad->irc = init_irc();       /* Initialise the IRC instance. */
         addhndlr( ircad->irc, irchandler ); /* Register IRC handler. */
 

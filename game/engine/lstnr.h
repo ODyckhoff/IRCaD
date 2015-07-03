@@ -1,4 +1,5 @@
-
+#ifndef __LSTNR_H
+#define __LSTNR_H
 
 typedef struct lstnrlist_t {
 
@@ -13,3 +14,6 @@ typedef struct lstnrlist_t {
 };
 
 struct lstnrlist_t *reglstnrs();
+
+#endif /* __LSTNR_H */
+
