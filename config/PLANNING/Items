@@ -143,3 +143,39 @@ THE ALMIGHTY ITEM LIST (To be put into Mysql)
 98|W|Soldier's Crossbow|crossbow|09|mainhand,offhand|ra|n3
 99|W|Furyfire's Wrath|crossbow|10|mainhand,offhand|ra|y
 
+
+
+
+
+100|A|Cloth Tunic|cloth|01|body|n0|
+101|A|Ragged Hat|cloth|02|head|n0|
+102|A|Linen Footwraps|cloth|03|feet|n0|
+103|A|Linen Robe|cloth|04|body|n1|
+104|A|Wizard Hat|cloth|05|head|n1|
+105|A|Woven Treads|cloth|06|feet|n1|
+106|A|Mageweave Robe|cloth|07|body|n2|
+107|A|Fancy Hat|cloth|08|head|n2|
+108|A|Felted Shoes|cloth|09|feet|n2|
+109|A|Liore Regalia|cloth|10|body|y|
+
+110|A|Ragged Leather Armour|light|01|body|n0|
+111|A|Scraggy Cap|light|02|head|n0|
+112|A|Torn Boots|light|03|feet|n0|
+113|A|Studded Leather Armour|light|04|body|n1|
+114|A|Leather Helmet|light|05|head|n1|
+115|A|Hiking Boots|light|06|feet|n1|
+116|A|Whelkskin Armour|light|07|body|n2|
+117|A|Shadow Cap|light|08|head|n2|
+118|A|Reinforced Hide Wellies|light|09|feet|n2|
+119|A|Drakeskin Armour|light|10|body|y|
+
+120|A|Battered Iron Armour|heavy|01|body|n0|
+121|A|Dented Helmet|heavy|02|head|n0|
+122|A|Steel Toe Boots|heavy|03|feet|n0|
+123|A|Steel Cuirass|heavy|04|body|n1|
+124|A|Red Iron Helmet|heavy|05|head|n1|
+125|A|Steel Greaves|heavy|06|feet|n1|
+126|A|Mithril Armour|heavy|07|body|n2|
+127|A|Unyielding Bassinet|heavy|08|head|n2|
+128|A|Satisfying Sabatons|heavy|09|feet|n2|
+129|A|Knights Plate Armour|heavy|10|body|y|
