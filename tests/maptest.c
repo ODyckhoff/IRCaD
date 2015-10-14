@@ -27,9 +27,9 @@ int main(int argc, char **argv) {
     clock_t cend = clock();
     clock_t cdiff = (long double )cend - cstart;
 
-    long double tstart = cstart/CLOCKS_PER_SEC;
-    long double tend = cend/CLOCKS_PER_SEC;
-    long double tdiff = (long double)difftime(tstart, tend);
+    time_t tstart = cstart/CLOCKS_PER_SEC;
+    time_t tend = cend/CLOCKS_PER_SEC;
+    long double tdiff = (long double)difftime(tend, tstart);
 
     printf("Generation complete in:\n\t%Lf CPU Clocks\n\t%Lf seconds\n", cdiff, tdiff);
     
