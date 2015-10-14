@@ -8,7 +8,7 @@
 
 intrnl_lstnrlist_t *regintrnllstnrs() {
     
-    intrnl_lstnrlist_t list = malloc( sizeof( intrnl_lstnrlist_t ) );
+    intrnl_lstnrlist_t *list = malloc( sizeof( intrnl_lstnrlist_t ) );
 
     
     return list;

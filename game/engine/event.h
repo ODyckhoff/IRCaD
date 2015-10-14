@@ -1,7 +1,12 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-enum types {
+enum ev_hndlrs {
+    BUILD,
+    REGISTER
+};
+
+enum ev_types {
     ACTION    = 1,
     CHARACTER = 2,
     COMBAT    = 3,
@@ -10,10 +15,10 @@ enum types {
     INTERNAL  = 6,
     PARTY     = 7,
     PLAYER    = 8,
-    WORLD     = 9,
+    WORLD     = 9
 };
 
-enum categories {
+enum ev_category {
 
     ACT_DROP,
     ACT_INV,
@@ -28,7 +33,10 @@ enum categories {
     CHAR_QUEST,
     CHAR_SPAWN,
     CHAR_EXP,
+    CHAR_TURN,
 
+    COM_START,
+    COM_END,
     COM_CRIT,
     COM_HITS,
     COM_MISS,
@@ -45,14 +53,16 @@ enum categories {
     INTERACT_SHOP,
     INTERACT_TALK,
 
+    INTERN_INIT,
     INTERN_CACHE,
     INTERN_DB,
     INTERN_LOAD,
     INTERN_SAVE,
     INTERN_IRC,
+    INTERN_EXIT,
 
     PARTY_MEMBER,
-    PARTY_PARY,
+    PARTY_PARTY,
     PARTY_LEAVE,
 
     PLAYER_ACC,

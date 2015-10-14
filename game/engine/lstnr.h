@@ -11,7 +11,7 @@ typedef struct lstnrlist_t {
     struct intrnl_lstnrlist_t *intrnl;
     struct player_lstnrlist_t *player;
     struct world_lstnrlist_t *world;
-};
+} lstnrlist_t;
 
 struct lstnrlist_t *reglstnrs();
 

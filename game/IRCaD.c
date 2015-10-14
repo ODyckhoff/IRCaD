@@ -7,17 +7,15 @@
 /*#include "game.h"*/
 #include "engine.h"
 #include "irch.h"
-#include "utils/share.h"
+/*#include "utils/share.h"*/
 
 #include "Circle/init.h"
 #include "Circle/handler.h"
 
-IRCaD *ircad;
-
 int main( int argc, char **argv ) {
 
     /* So... it begins. Let's make the IRCaD instance. */
-    ircad = malloc( sizeof( IRCaD ) );
+    IRCaD *ircad = malloc( sizeof( IRCaD ) );
 
     enginit( ircad );
 

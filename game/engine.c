@@ -3,12 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "IRCaD.h"
 #include "engine.h"
-#include "engine/event.h"
+/*#include "engine/event.h"*/
 #include "engine/lstnr.h"
 
 
-int enginit( IRCaD *ircad ) {
+int enginit( IRCaD *ircad  ) {
 
     ircad->listeners = reglstnrs(); /* Initialise all event listeners */
 

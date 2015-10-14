@@ -8,6 +8,6 @@ typedef struct event_t {
     int category;
 } event_t;
 
-int makeevent(int type, int category);
+int mkev(int type, int category);
     
 #endif /* HANDLER_H */

@@ -2,21 +2,46 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 #include "event.h"
 #include "events/action.h"
 
-int inittev(int type, int category, int datasize, void *data) {
+int inittev( int type, int category, int datasize, void *data ) {
     event_t *e;
 
-    e = makeevent(type, category);
-       buildevent(e, datasize, data);
+    e = mkev( type, category );
+    buildev( e, datasize, data );
 
-    trigev(e);
+    trigev( e );
 }
 
-int buildevent(event_t *e, int datasize, void *data) {
-    switch(e->type) {
+int ev_hndlr( event_t *e, int handler, ... ) {
+    int i;
+    void ( *fp )();
+    va_list ap;
+    int datasize;
+    void *data;
+
+    if( handler == BUILD ) {
+        va_start( ap, handler );
+        datasize = va_arg( ap, int );
+        data = va_arg( ap, void * );
+    }
+
+    switch( e->type ) {
+        case ACTION:
+            handler == BUILD ?
+                act_ev_hndlr( e, handler, datasize, data )
+            :
+                act_ev_hndlr( e, handler );
+        break;
+    }
+
+}
+
+int buildev( event_t *e, int datasize, void *data ) {
+    switch( e->type ) {
         case ACTION:
             e->event = new_act_ev(e, datasize, data);
         break;
@@ -50,6 +75,10 @@ int buildevent(event_t *e, int datasize, void *data) {
     }
 }
 
-int trigev(event_t *e) {
+int trigev( event_t *e ) {
+    
+}
+
+int regevlstnrs( event_t *e ) {
     
 }

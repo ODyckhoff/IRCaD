@@ -4,7 +4,7 @@
 #include "Circle/irc.h"
 
 /*#include "game.h"*/
-#include "engine/lstnr.h"
+/*#include "engine/lstnr.h"*/
 
 typedef struct IRCaD {
 

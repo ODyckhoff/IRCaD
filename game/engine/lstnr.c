@@ -10,8 +10,8 @@ lstnrlist_t *reglstnrs() {
 
     lstnrlist_t *list = malloc( sizeof( lstnrlist_t ) );
 
-    /* Internal listeners first. */
-    list->intrnl = regintrnllstnrs();
+    /* Internal listeners last, so they can listen for other listeners */
+    regintrnllstnrs(list);
 
     return list;
 }
