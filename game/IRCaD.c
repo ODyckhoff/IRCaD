@@ -1,29 +1,68 @@
 /* IRCaD.c - The mother ship. Gets the ball rolling. */
-
-#include <stdlib.h>
-#include <stdio.h>
-
 #include "IRCaD.h"
-/*#include "game.h"*/
-#include "engine.h"
-#include "irch.h"
-/*#include "utils/share.h"*/
 
-#include "Circle/init.h"
-#include "Circle/handler.h"
+#include "engine.h"
+#include "logs.h"
+#include "cfg.h"
+
+#include "utils/termcol.h"
 
 int main( int argc, char **argv ) {
 
+    int err;
+    IRCaD *ircad;
+
+    if( argc > 1 ) {
+        if( strcmp( argv[1], "-h" ) == 0 || strcmp( argv[1], "--help" ) == 0 ) {
+            printf( "Here is some help.\n" );
+            return EXIT_SUCCESS;
+        }
+    }
+
     /* So... it begins. Let's make the IRCaD instance. */
-    IRCaD *ircad = malloc( sizeof( IRCaD ) );
 
-    enginit( ircad );
+    printf( "Starting IRCaD . . . " );
 
-    ircad->irc = init_irc();       /* Initialise the IRC instance. */
-        addhndlr( ircad->irc, irchandler ); /* Register IRC handler. */
+    ircad = malloc( sizeof( IRCaD ) );
+    ircad->id = 2;
 
-    irc_run();
+    if( ircad == NULL ) {
+        printf( KWHT "[" KNRM " " KRED "FAIL" KNRM " " KWHT "]" KNRM " : Unable to allocate memory for IRCaD core.\n" );
+        return EXIT_FAILURE;
+    }
+    else {
+        printf( KWHT "[" KNRM " " KGRN "OK" KNRM " " KWHT "]" KNRM "\n" );
+    }
+
+    /* Load Configuration files. */
+
+    printf( "Loading Configuration . . . " );
+
+    err = loadcfg( ircad );
+
+    if( err < 0 ) {
+        printf( KWHT "[" KNRM " " KRED "FAIL" KNRM " " KWHT "]" KNRM ": Unable to load configuration - %s\n", 
+                strerror( errno )
+        );
+    }
+    else {
+        printf( KWHT "[" KNRM " " KGRN "OK" KNRM " " KWHT "]" KNRM "\n" );
+    }
+
+    /* Open log files. */
+    err = loginit( ircad );
+
+    /* Initialise IRCaD engine. */
+
+    printf( "Initialising IRCaD Engine . . . " );
+
+    enginit( ircad ); /* IRC_START event will print "[ OK ]"  message. */
     
-    return EXIT_SUCCESS;
+    /* If we get here, engine initialisation failed
+        somewhere prior to the IRCh taking control. */
+
+    printf( KWHT "[" KNRM " " KRED "FAIL" KNRM " " KWHT "]" KNRM " : Engine initialisation failed.\n" );
+
+    return EXIT_FAILURE;
 }
 

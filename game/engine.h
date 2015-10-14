@@ -1,9 +1,10 @@
-#ifndef MECHANICS_H
-#define MECHANICS_H
+#ifndef __IRCAD_ENGINE_H
+#define __IRCAD_ENGINE_H
 
-/* #include "engine/event.h" */
+#include <stdlib.h>
+#include <stdio.h>
 
-int enginit();
-int startevent(int type, int category, int datasize, void *data);
+#include "IRCaD.h"
+int enginit( IRCaD *ircad );
 
-#endif /* MECHANICS_H */
+#endif /* __IRCAD_ENGINE_H */

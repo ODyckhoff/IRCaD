@@ -3,7 +3,7 @@ IRCaD Versions
 
 Current Version: 0.1.27
 
-Version at document creation, 22/01/2013, is: 0.1.27
+Version at document creation, 22/01/2013: 0.1.27
 
 
 

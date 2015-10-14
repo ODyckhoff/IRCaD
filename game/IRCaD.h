@@ -1,21 +1,19 @@
-#ifndef IRCAD_H
-#define IRCAD_H
+#ifndef __IRCAD_H
+#define __IRCAD_H
 
-#include "Circle/irc.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
 
-/*#include "game.h"*/
-/*#include "engine/lstnr.h"*/
+typedef struct _IRCaD {
 
-typedef struct IRCaD {
-
-    int game_count;
-    /*struct game_t *game_list;*/
-    struct lstnrlist_t *listeners;
-
-    struct irc_t *irc;
+    int id;
     
 } IRCaD;
 
-extern IRCaD ircad;
+#include "engine.h"
+#include "logs.h"
+#include "cfg.h"
 
-#endif /* IRCAD_H */
+#endif /* __IRCAD_H */
