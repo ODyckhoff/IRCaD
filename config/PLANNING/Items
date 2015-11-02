@@ -1,35 +1,36 @@
-Am making a brief overview of the items list, giving item IDs.
-Only weapons so far, this will allow the admins to 'give' at item to a player. 
-'/admingive 1 playerX' would give playerX item 1, a tree branch.
+//Am making a brief overview of the items list, giving item IDs.
+//Only weapons so far, this will allow the admins to 'give' at item to a player. 
+//'/admingive 1 playerX' would give playerX item 1, a tree branch.
 
 
-Format: 
-ID | ItemCode | Name | ItemType | Rarity | Slot | ClassType | Buffcode
+//Format: 
+//ID | ItemCode | Name | ItemType | Rarity | Slot | ClassType | Buffcode
 
-ID is an integer that applies to one item only.
-ItemCode is a single letter, either W A or M (weapon, armour, miscellaneous)
-Name is a text field.
-ItemType defines which subgroup of the ItemCode the item is in:
-  -on weapons, the type of weapon it is. (Longsword)
-  -on armour, the classes that can equip it. He(avy, protectors and warriors), Li(ght, Rangers and Rogues), Cl(oth, Sorcerers and Wizards)
-  -on misc, the type of misc object it is. Po(tion), Sm(ithing reagent), Al(chemical reagent), Br(ewing reagent), Qu(est item), AD(min item)
-Rarity defines the rarity index of the type, and how likely an item is to drop from mobs. (5)
-Slot is where item is equipped. (Mainhand)
-ClassType is a 2 letter code which determines the class that can use the item or AL, meaning all.
-BuffCode determines whether an item has:
-* set buffs when it spawns (y)
-* a set number of randomly generated ones. (n0, n1, n2, n3)
+//ID is an integer that applies to one item only.
+//ItemCode is a single letter, either W A or M (weapon, armour, miscellaneous)
+//Name is a text field.
+//ItemType defines which subgroup of the ItemCode the item is in:
+//  -on weapons, the type of weapon it is. (Longsword)
+//  -on armour, the classes that can equip it. He(avy, protectors and warriors), Li(ght, Rangers and Rogues), Cl(oth, Sorcerers and Wizards)
+//  -on misc, the type of misc object it is. Po(tion), Sm(ithing reagent), Al(chemical reagent), Br(ewing reagent), Qu(est item), AD(min item)
+//Rarity defines the rarity index of the type, and how likely an item is to drop from mobs. (5)
+//Slot is where item is equipped. (Mainhand, Offhand, Head, Body, Feet, Hands, Trinket, Ring, Nonequip)
+//ClassType is group of 2 letter codes which determines the classes that can use the item or AL, meaning all.
+//BuffCode determines whether an item has:
+//* set buffs when it spawns (y)
+//* a set number of randomly generated ones. (n0, n1, n2, n3)
 
-So when making an iron longsword:
-ID is 5, W for weapon, Iron Longsword is the name, longsword is the type, 5 is the rarity, mainhand is the slot, 
-wa is the classtype and the buffcode is n1, as it does not have set buffs and can be randomly assigned 1 buff.
-
-
-
-THE ALMIGHTY ITEM LIST (To be put into Mysql)
+//So when making an iron longsword:
+//ID is 5, W for weapon, Iron Longsword is the name, longsword is the type, 5 is the rarity, mainhand is the slot, 
+//wa is the classtype and the buffcode is n1, as it does not have set buffs and can be randomly assigned 1 buff.
 
 
-0|M|Fluffy Happy Pillow|AD|0|mainhand|AL|y
+
+//THE ALMIGHTY ITEM LIST
+
+
+
+0|M|Fluffy Happy Pillow|AD|00|mainhand|AL|y
 
 1|W|Tree Branch|longsword|01|mainhand|wa|n0
 2|W|Splinted Longsword|longsword|02|mainhand|wa|n0
