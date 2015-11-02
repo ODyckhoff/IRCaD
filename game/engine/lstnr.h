@@ -1,5 +1,7 @@
-#ifndef __LSTNR_H
-#define __LSTNR_H
+#ifndef __IRCAD_LSTNR_H
+#define __IRCAD_LSTNR_H
+
+#include "IRCaD.h"
 
 typedef struct lstnrlist_t {
 
@@ -15,5 +17,7 @@ typedef struct lstnrlist_t {
 
 struct lstnrlist_t *reglstnrs();
 
-#endif /* __LSTNR_H */
+int lstnr_init( IRCaD *ircad );
+
+#endif /* __IRCAD_LSTNR_H */
 

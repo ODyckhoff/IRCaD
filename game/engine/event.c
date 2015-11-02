@@ -1,84 +1,44 @@
 /* event.c - it does events */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-
 #include "event.h"
-#include "events/action.h"
 
-int inittev( int type, int category, int datasize, void *data ) {
-    event_t *e;
+int evlstnrif_init( IRCaD *ircad ) {
+    int i = 0;
+    struct dispatch_table *d;
+    for( i = 0; i < NUMEV; i++ ) {
+        d = malloc( sizeof( struct dispatch_table ) );
+        d->name = dispatcher[ i ].name;
+        d->function = dispatcher[ i ].function;
 
-    e = mkev( type, category );
-    buildev( e, datasize, data );
+        puthmap( ircad->events, dispatcher[ i ].name, d );
+    }
 
-    trigev( e );
+    return 0;
 }
 
-int ev_hndlr( event_t *e, int handler, ... ) {
+int ev_start( IRCaD *ircad, char *name ) {
     int i;
-    void ( *fp )();
-    va_list ap;
-    int datasize;
-    void *data;
+    int err = -1;
+    event_t *data = malloc( sizeof( event_t ) );
 
-    if( handler == BUILD ) {
-        va_start( ap, handler );
-        datasize = va_arg( ap, int );
-        data = va_arg( ap, void * );
+    struct dispatch_table *d = gethmap( ircad->events, name );
+    err = d->function( ircad, data );
+
+    if( err > 0) {
+        fprintf( stderr, "failed: %d\n", err );
+        return 1;
     }
-
-    switch( e->type ) {
-        case ACTION:
-            handler == BUILD ?
-                act_ev_hndlr( e, handler, datasize, data )
-            :
-                act_ev_hndlr( e, handler );
-        break;
+    else if( err == -1 ) {
+        /* no listeners or nothing happened. */
+       return -1;
     }
-
+    else {
+        ev_trigger( ircad, name, data );
+    }
+    return 0;
 }
 
-int buildev( event_t *e, int datasize, void *data ) {
-    switch( e->type ) {
-        case ACTION:
-            e->event = new_act_ev(e, datasize, data);
-        break;
-        case CHARACTER:
-            e->event = new_character_ev(e, datasize, data);
-        break;
-        case COMBAT:
-            e->event = new_combat_ev(e, datasize, data);
-        break;
-        case GAME:
-            e->event = new_game_ev(e, datasize, data);
-        break;
-        case INTERACT:
-            e->event = new_interact_ev(e, datasize, data);
-        break;
-        case INTERNAL:
-            e->event = new_internal_ev(e, datasize, data);
-        break;
-        case PARTY:
-            e->event = new_party_ev(e, datasize, data);
-        break;
-        case PLAYER:
-            e->event = new_player_ev(e, datasize, data);
-        break;
-        case WORLD:
-            e->event = new_world_ev(e, datasize, data);
-        break;
-        default:
-            return 0;
-        break;
-    }
-}
+int ev_trigger( IRCaD *ircad, char *name, event_t *data ) {
+    /* Get listeners. */
 
-int trigev( event_t *e ) {
-    
-}
-
-int regevlstnrs( event_t *e ) {
     
 }

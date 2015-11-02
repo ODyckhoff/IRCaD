@@ -6,14 +6,19 @@
 #include <errno.h>
 #include <string.h>
 
+#include "utils/hashmap.h"
 typedef struct _IRCaD {
 
-    int id;
+    hashmap_t *cfg;
+    hashmap_t *events;
+    hashmap_t *lstnrs;
+    FILE **logfiles;
+    char *test;
     
 } IRCaD;
 
+#include "cfg.h"
 #include "engine.h"
 #include "logs.h"
-#include "cfg.h"
 
 #endif /* __IRCAD_H */

@@ -3,9 +3,19 @@
 #include "engine.h"
 
 int enginit( IRCaD *ircad  ) {
+    int err;
 
-    int id = ircad->id;
-    id--;
-    return 0;
+    ircad->events = inithmap( 1 );
+    ircad->lstnrs = inithmap( 1 );
+
+    /* Initialise event/listener interface. */
+    err = evlstnrif_init( ircad );
+    return err;
 }
-  
+
+int engstart( IRCaD *ircad ) {
+
+    int err = ev_start( ircad, "internal/init" );
+    return err;
+}
+

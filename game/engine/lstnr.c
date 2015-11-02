@@ -6,12 +6,13 @@
 #include "lstnr.h"
 #include "lstnr/internal.h"
 
-lstnrlist_t *reglstnrs() {
+int lstnr_init( IRCaD *ircad ) {
 
     lstnrlist_t *list = malloc( sizeof( lstnrlist_t ) );
+    if( list == NULL ) {
+        return 1;
+    }
 
-    /* Internal listeners last, so they can listen for other listeners */
-    regintrnllstnrs(list);
 
-    return list;
+    return 0;
 }

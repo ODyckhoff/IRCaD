@@ -4,9 +4,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "IRCaD.h"
+#include "utils/hashmap.h"
 #include "cfg/hndlr.h"
 
+#include "IRCaD.h"
+
 int loadcfg( IRCaD *ircad );
+void *cfg_get( hashmap_t *hm, char *key );
 
 #endif /* __IRCAD_CFG_H */

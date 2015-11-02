@@ -21,22 +21,24 @@ int main( int argc, char **argv ) {
 
     /* So... it begins. Let's make the IRCaD instance. */
 
-    printf( "Starting IRCaD . . . " );
+    printf( "Starting IRCaD . . .           " );
 
     ircad = malloc( sizeof( IRCaD ) );
-    ircad->id = 2;
 
     if( ircad == NULL ) {
         printf( KWHT "[" KNRM " " KRED "FAIL" KNRM " " KWHT "]" KNRM " : Unable to allocate memory for IRCaD core.\n" );
         return EXIT_FAILURE;
     }
     else {
-        printf( KWHT "[" KNRM " " KGRN "OK" KNRM " " KWHT "]" KNRM "\n" );
+        printf( " " KWHT "[" KNRM " " KGRN "OK" KNRM " " KWHT "]" KNRM "\n" );
     }
+
+    ircad->test = malloc( 7 );
+    strcpy( ircad->test, "hello\0" );
 
     /* Load Configuration files. */
 
-    printf( "Loading Configuration . . . " );
+    printf( "Loading Configuration . . .    " );
 
     err = loadcfg( ircad );
 
@@ -46,7 +48,7 @@ int main( int argc, char **argv ) {
         );
     }
     else {
-        printf( KWHT "[" KNRM " " KGRN "OK" KNRM " " KWHT "]" KNRM "\n" );
+        printf( " " KWHT "[" KNRM " " KGRN "OK" KNRM " " KWHT "]" KNRM "\n" );
     }
 
     /* Open log files. */
@@ -54,15 +56,25 @@ int main( int argc, char **argv ) {
 
     /* Initialise IRCaD engine. */
 
-    printf( "Initialising IRCaD Engine . . . " );
+    printf( "Initialising IRCaD Engine . . ." );
 
-    enginit( ircad ); /* IRC_START event will print "[ OK ]"  message. */
+    err = enginit( ircad );
     
-    /* If we get here, engine initialisation failed
-        somewhere prior to the IRCh taking control. */
+    if( err != 0 ) {
+        printf( KWHT "[" KNRM " " KRED "FAIL" KNRM " " KWHT "]" KNRM "\nReason - Engine initialisation failed. Error code: %d\n", err );
+        return EXIT_FAILURE;
+    }
+    printf( " " KWHT "[" KNRM " " KGRN "OK" KNRM " " KWHT "]" KNRM "\n" );
+    
+    printf( "Initialising IRC handler . . . " );
+    err = engstart( ircad ); /* irc/start event will print "[ OK ]"  message. */
 
-    printf( KWHT "[" KNRM " " KRED "FAIL" KNRM " " KWHT "]" KNRM " : Engine initialisation failed.\n" );
+    if( err != 0 ) {
+        printf( KWHT "[" KNRM " " KRED "FAIL" KNRM " " KWHT "]" KNRM "\nReason - IRC Handler failed. Error code: %d\n", err );
+        return EXIT_FAILURE;
+    }
 
-    return EXIT_FAILURE;
+    /* IRC Handler exited normally. */
+    return EXIT_SUCCESS;
 }
 
